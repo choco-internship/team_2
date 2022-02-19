@@ -1,0 +1,576 @@
+{
+	"home": [{
+		"restaurant": {
+			"restaurant_data": {
+				"id": 1,
+				"name": "Ipsa delectus magni quod.",
+				"location": "149222, \u0410\u0441\u0442\u0440\u0430\u0445\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u041e\u0440\u0435\u0445\u043e\u0432\u043e-\u0417\u0443\u0435\u0432\u043e, \u043f\u043b. \u041a\u043e\u0441\u0438\u043e\u0440\u0430, 32",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 1,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/00bbbb?text=quia",
+				"restaurant_id": 1,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 2,
+				"name": "In autem illum dolorem qui.",
+				"location": "567601, \u041e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u0417\u0430\u0440\u0430\u0439\u0441\u043a, \u0448\u043e\u0441\u0441\u0435 \u041a\u043e\u0441\u043c\u043e\u043d\u0430\u0432\u0442\u043e\u0432, 84",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 6,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/00ffcc?text=vitae",
+				"restaurant_id": 2,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 3,
+				"name": "Maiores quia in qui qui.",
+				"location": "615207, \u0427\u0438\u0442\u0438\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u0418\u0441\u0442\u0440\u0430, \u043d\u0430\u0431. \u0411\u0430\u043b\u043a\u0430\u043d\u0441\u043a\u0430\u044f, 10",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 11,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/001199?text=maiores",
+				"restaurant_id": 3,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 4,
+				"name": "Eaque veniam eaque quo.",
+				"location": "770065, \u041a\u0443\u0440\u0433\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u0415\u0433\u043e\u0440\u044c\u0435\u0432\u0441\u043a, \u0448\u043e\u0441\u0441\u0435 \u0414\u043e\u043c\u043e\u0434\u0435\u0434\u043e\u0432\u0441\u043a\u0430\u044f, 17",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 16,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/00cc55?text=earum",
+				"restaurant_id": 4,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 5,
+				"name": "Beatae et ut magni.",
+				"location": "168374, \u0421\u0432\u0435\u0440\u0434\u043b\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u041b\u044e\u0431\u0435\u0440\u0446\u044b, \u0431\u0443\u043b\u044c\u0432\u0430\u0440 \u0413\u043e\u0433\u043e\u043b\u044f, 44",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 21,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/00aa77?text=possimus",
+				"restaurant_id": 5,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 6,
+				"name": "Ipsam iure odit ut dolore.",
+				"location": "387080, \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u0417\u0430\u0440\u0430\u0439\u0441\u043a, \u0431\u0443\u043b\u044c\u0432\u0430\u0440 \u0411\u0443\u0445\u0430\u0440\u0435\u0441\u0442\u0441\u043a\u0430\u044f, 49",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 26,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/00cc55?text=non",
+				"restaurant_id": 6,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 7,
+				"name": "In ea esse molestiae ratione.",
+				"location": "860193, \u0422\u0432\u0435\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u041f\u043e\u0434\u043e\u043b\u044c\u0441\u043a, \u043f\u0440. 1905 \u0433\u043e\u0434\u0430, 82",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 31,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/004433?text=ea",
+				"restaurant_id": 7,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 8,
+				"name": "Fuga aut est perferendis.",
+				"location": "153699, \u0422\u043e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u0418\u0441\u0442\u0440\u0430, \u0448\u043e\u0441\u0441\u0435 \u0411\u0443\u0434\u0430\u043f\u0435\u0448\u0442\u0441\u0442\u043a\u0430\u044f, 24",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 36,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/00aaee?text=qui",
+				"restaurant_id": 8,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 9,
+				"name": "Non dolorem et facere velit.",
+				"location": "836075, \u042f\u0440\u043e\u0441\u043b\u0430\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u0412\u043e\u043b\u043e\u043a\u043e\u043b\u0430\u043c\u0441\u043a, \u0443\u043b. \u0427\u0435\u0445\u043e\u0432\u0430, 85",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 41,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/0066bb?text=qui",
+				"restaurant_id": 9,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}, {
+		"restaurant": {
+			"restaurant_data": {
+				"id": 10,
+				"name": "Ut qui expedita unde.",
+				"location": "909002, \u0420\u044f\u0437\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c, \u0433\u043e\u0440\u043e\u0434 \u0428\u0430\u0442\u0443\u0440\u0430, \u043f\u0435\u0440. \u041a\u043e\u0441\u043c\u043e\u043d\u0430\u0432\u0442\u043e\u0432, 38",
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			},
+			"image": {
+				"id": 46,
+				"image_url": "https:\/\/via.placeholder.com\/640x480.png\/008855?text=praesentium",
+				"restaurant_id": 10,
+				"created_at": "2022-02-16T14:08:35.000000Z",
+				"updated_at": "2022-02-16T14:08:35.000000Z"
+			}
+		}
+	}],
+  "menu": {
+    "restaurant": {
+      "restaurant_info": {
+        "id": 5,
+        "name": "Explicabo quisquam et ipsam.",
+        "location": "294 Freddy Creek Suite 323\nEast Maryamside, NY 85869",
+        "created_at": "2022-02-17T09:16:59.000000Z",
+        "updated_at": "2022-02-17T09:16:59.000000Z"
+      },
+      "restaurant_images": [{
+        "id": 21,
+        "image_url": "https:\/\/via.placeholder.com\/640x480.png\/005522?text=repudiandae",
+        "restaurant_id": 5,
+        "created_at": "2022-02-17T09:16:59.000000Z",
+        "updated_at": "2022-02-17T09:16:59.000000Z"
+      }, {
+        "id": 22,
+        "image_url": "https:\/\/via.placeholder.com\/640x480.png\/0088ff?text=sint",
+        "restaurant_id": 5,
+        "created_at": "2022-02-17T09:17:00.000000Z",
+        "updated_at": "2022-02-17T09:17:00.000000Z"
+      }, {
+        "id": 23,
+        "image_url": "https:\/\/via.placeholder.com\/640x480.png\/000055?text=quia",
+        "restaurant_id": 5,
+        "created_at": "2022-02-17T09:17:00.000000Z",
+        "updated_at": "2022-02-17T09:17:00.000000Z"
+      }, {
+        "id": 24,
+        "image_url": "https:\/\/via.placeholder.com\/640x480.png\/0099bb?text=explicabo",
+        "restaurant_id": 5,
+        "created_at": "2022-02-17T09:17:01.000000Z",
+        "updated_at": "2022-02-17T09:17:01.000000Z"
+      }, {
+        "id": 25,
+        "image_url": "https:\/\/via.placeholder.com\/640x480.png\/000099?text=debitis",
+        "restaurant_id": 5,
+        "created_at": "2022-02-17T09:17:02.000000Z",
+        "updated_at": "2022-02-17T09:17:02.000000Z"
+      }]
+    },
+    "products": {
+      "Little Cheeseburger": [{
+        "id": 371,
+        "product_category_id": 38,
+        "name": "Bacon Burger",
+        "price": 10854,
+        "description": "Vel ut laborum deserunt ut. Qui in et laboriosam quia libero aspernatur illo. Ducimus cumque non ut assumenda voluptatem voluptates assumenda et. Deleniti assumenda ex magni et suscipit quia enim.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/002299?text=similique",
+        "created_at": "1995-08-15T09:43:00.000000Z",
+        "updated_at": "1991-07-07T10:11:03.000000Z"
+      }, {
+        "id": 385,
+        "product_category_id": 38,
+        "name": "Bacon Dog",
+        "price": 11927,
+        "description": "Adipisci est alias sint ratione fuga eos. Explicabo vel quo veniam qui aut. Ut et aut repellat nobis. Ratione similique qui mollitia delectus sapiente quos quia et.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=voluptatibus",
+        "created_at": "1989-06-04T22:46:08.000000Z",
+        "updated_at": "1993-12-13T19:07:30.000000Z"
+      }, {
+        "id": 468,
+        "product_category_id": 38,
+        "name": "Cheese Dog",
+        "price": 9898,
+        "description": "Aut quidem amet incidunt libero temporibus maxime nostrum. Qui eos voluptates cupiditate magni quam. Ut eum sint est hic cupiditate consequuntur unde deleniti. Ipsum et consequatur aut eos similique.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00ee77?text=sit",
+        "created_at": "1973-08-10T22:13:08.000000Z",
+        "updated_at": "2011-10-16T14:20:25.000000Z"
+      }],
+      "Cheese Pizza": [{
+        "id": 344,
+        "product_category_id": 29,
+        "name": "Little Bacon Cheeseburger",
+        "price": 16621,
+        "description": "Qui voluptatem est quia rerum eaque et dignissimos. Ullam aut debitis id enim aut. Eligendi magni consequatur rem sit quia excepturi exercitationem. Optio reprehenderit et deserunt.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/0066dd?text=molestiae",
+        "created_at": "1992-03-11T22:13:41.000000Z",
+        "updated_at": "1997-09-05T15:14:33.000000Z"
+      }, {
+        "id": 348,
+        "product_category_id": 29,
+        "name": "Little Bacon Cheeseburger",
+        "price": 19444,
+        "description": "Eius quos dignissimos cum temporibus. Quo quia alias recusandae. Non labore ipsum hic reprehenderit explicabo tempora numquam est.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/0011dd?text=dolor",
+        "created_at": "1995-08-10T00:38:29.000000Z",
+        "updated_at": "1971-01-06T23:26:30.000000Z"
+      }, {
+        "id": 419,
+        "product_category_id": 29,
+        "name": "Bacon Cheese Dog",
+        "price": 11395,
+        "description": "Nihil saepe reiciendis voluptas libero architecto delectus. Quas et explicabo enim dignissimos et atque. Reiciendis vitae qui porro non harum.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff33?text=minima",
+        "created_at": "1983-05-15T13:30:42.000000Z",
+        "updated_at": "2004-08-10T10:49:05.000000Z"
+      }, {
+        "id": 422,
+        "product_category_id": 29,
+        "name": "Bacon Burger",
+        "price": 10478,
+        "description": "Eum aut similique incidunt. Molestiae quam repudiandae rem voluptatibus. Dolorum quas sit omnis quis doloribus assumenda unde cupiditate.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00ffff?text=eaque",
+        "created_at": "1990-12-04T05:03:45.000000Z",
+        "updated_at": "2017-02-13T15:54:59.000000Z"
+      }, {
+        "id": 450,
+        "product_category_id": 29,
+        "name": "Bacon Dog",
+        "price": 16402,
+        "description": "Sunt distinctio harum laboriosam veniam inventore ab et. Ea quis molestiae quos fugiat quibusdam officia voluptas. Dolorem inventore earum magnam ex animi non.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/000044?text=voluptate",
+        "created_at": "2017-07-27T11:18:26.000000Z",
+        "updated_at": "2016-05-25T16:15:03.000000Z"
+      }],
+      "Veggie Sandwich": [{
+        "id": 133,
+        "product_category_id": 93,
+        "name": "Grilled Cheese",
+        "price": 7416,
+        "description": "Omnis et aut est ad. Quis dolores enim eius pariatur sint praesentium iste. Sed repudiandae omnis officia odio et odit ipsum voluptas.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/000044?text=in",
+        "created_at": "1985-04-07T16:57:23.000000Z",
+        "updated_at": "2001-04-11T01:09:37.000000Z"
+      }, {
+        "id": 189,
+        "product_category_id": 93,
+        "name": "Cheese Veggie Sandwich",
+        "price": 8859,
+        "description": "Iste fugit aut et est deleniti ut expedita. Odio qui omnis sequi expedita molestiae in dolor maxime. Sit libero nostrum animi perferendis nam rerum. Ut at vel qui ut corporis fuga.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00aa11?text=eaque",
+        "created_at": "1971-12-03T17:22:04.000000Z",
+        "updated_at": "2019-05-16T17:12:38.000000Z"
+      }, {
+        "id": 225,
+        "product_category_id": 93,
+        "name": "Cheeseburger",
+        "price": 10236,
+        "description": "Deleniti ut esse ut id molestiae quia dolor. Alias quia id corrupti facere. Et sit laboriosam ea incidunt. Iste et quia tempore qui earum.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00dd66?text=consequatur",
+        "created_at": "1988-06-23T16:58:47.000000Z",
+        "updated_at": "1996-01-25T10:46:58.000000Z"
+      }, {
+        "id": 307,
+        "product_category_id": 93,
+        "name": "Bacon Burger",
+        "price": 19268,
+        "description": "Velit officia dolores consequatur molestiae sit ipsa. Itaque quia est et et ratione id error. Dolores deleniti et nostrum ut aut.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00dd44?text=autem",
+        "created_at": "2004-11-06T12:13:43.000000Z",
+        "updated_at": "2000-01-22T12:34:03.000000Z"
+      }, {
+        "id": 331,
+        "product_category_id": 93,
+        "name": "Little Bacon Cheeseburger",
+        "price": 5563,
+        "description": "Quam neque error optio ducimus facere. Quidem et praesentium distinctio. Ipsa commodi odit laborum similique. Enim error in sit vel commodi.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00aa44?text=ut",
+        "created_at": "1979-03-10T14:40:13.000000Z",
+        "updated_at": "1986-08-22T18:05:26.000000Z"
+      }, {
+        "id": 347,
+        "product_category_id": 93,
+        "name": "Bacon Burger",
+        "price": 9958,
+        "description": "Animi velit id rerum et. Est deserunt amet quas quo. Qui ut quaerat reiciendis incidunt sint ex quaerat. Enim aut enim vel eligendi voluptas possimus maxime.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/001155?text=nostrum",
+        "created_at": "1994-09-04T04:36:04.000000Z",
+        "updated_at": "2015-06-30T03:47:44.000000Z"
+      }, {
+        "id": 434,
+        "product_category_id": 93,
+        "name": "Cheese Veggie Sandwich",
+        "price": 4325,
+        "description": "Quidem consectetur et et non mollitia sit earum voluptatem. Provident sequi qui enim. Voluptatibus fuga voluptates laudantium aut omnis rem fugit. Rerum autem commodi cupiditate non voluptatem.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/004411?text=velit",
+        "created_at": "2002-01-18T16:54:34.000000Z",
+        "updated_at": "1970-11-29T21:23:21.000000Z"
+      }, {
+        "id": 461,
+        "product_category_id": 93,
+        "name": "Bacon Burger",
+        "price": 350,
+        "description": "Sed autem rerum voluptates rerum debitis odio velit optio. Nam non quaerat voluptatibus error iusto. Facilis quod iure et omnis eius error.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/0099bb?text=laboriosam",
+        "created_at": "1990-05-22T06:29:54.000000Z",
+        "updated_at": "1977-03-06T01:36:53.000000Z"
+      }],
+      "Little Hamburger": [{
+        "id": 43,
+        "product_category_id": 39,
+        "name": "Bacon Burger",
+        "price": 2561,
+        "description": "Cum ut qui sunt officiis labore ex ullam. Voluptatibus exercitationem quia error.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00bbbb?text=omnis",
+        "created_at": "1976-06-29T03:26:29.000000Z",
+        "updated_at": "1977-03-28T12:44:27.000000Z"
+      }, {
+        "id": 179,
+        "product_category_id": 39,
+        "name": "Little Cheeseburger",
+        "price": 11653,
+        "description": "Nemo adipisci excepturi voluptas ut. Voluptatum laborum suscipit deserunt sit qui. Laudantium fuga est est.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/0099cc?text=consequatur",
+        "created_at": "2018-09-15T12:06:04.000000Z",
+        "updated_at": "2021-04-17T00:43:33.000000Z"
+      }, {
+        "id": 205,
+        "product_category_id": 39,
+        "name": "Bacon Dog",
+        "price": 23628,
+        "description": "Corrupti cum deleniti est sequi non consequatur rem. Commodi amet possimus sit maxime aut. Vel nam unde saepe et magnam in repudiandae.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/006655?text=autem",
+        "created_at": "2012-07-08T06:11:38.000000Z",
+        "updated_at": "1983-05-25T18:18:46.000000Z"
+      }, {
+        "id": 287,
+        "product_category_id": 39,
+        "name": "Little Cheeseburger",
+        "price": 4317,
+        "description": "Eum voluptates rerum quod recusandae nemo enim doloremque id. Ipsa modi explicabo vel illum dolore provident autem. Illum accusantium unde corrupti nemo ut sed. Quia inventore quaerat dolorum quidem.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/000099?text=non",
+        "created_at": "1995-09-02T02:03:55.000000Z",
+        "updated_at": "1979-03-23T12:35:20.000000Z"
+      }, {
+        "id": 330,
+        "product_category_id": 39,
+        "name": "Little Bacon Burger",
+        "price": 12692,
+        "description": "Et tempore distinctio culpa est sint deleniti. Labore possimus iure cumque temporibus ipsa eos et. Optio dolorem quis iure quis. Non aut laboriosam totam exercitationem non excepturi possimus.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/006688?text=nisi",
+        "created_at": "2010-09-28T04:20:35.000000Z",
+        "updated_at": "1995-11-14T13:04:30.000000Z"
+      }],
+      "Bacon Cheeseburger": [{
+        "id": 45,
+        "product_category_id": 42,
+        "name": "Cheeseburger",
+        "price": 5404,
+        "description": "Veritatis quas ullam quia nostrum consequatur voluptates. Dolor quis esse facere optio reiciendis adipisci facere. Fugiat sapiente rerum ullam porro sunt.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/0088aa?text=qui",
+        "created_at": "2003-11-28T15:37:42.000000Z",
+        "updated_at": "1990-09-14T12:57:40.000000Z"
+      }, {
+        "id": 273,
+        "product_category_id": 42,
+        "name": "Bacon Dog",
+        "price": 9680,
+        "description": "Culpa atque perspiciatis nihil tenetur unde sint enim. In aut animi quod. Dolores laboriosam illo quos aliquid neque quia. Voluptatem est inventore itaque nemo totam.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/008844?text=fuga",
+        "created_at": "1976-08-28T09:51:11.000000Z",
+        "updated_at": "1985-06-18T22:09:15.000000Z"
+      }, {
+        "id": 381,
+        "product_category_id": 42,
+        "name": "Bacon Dog",
+        "price": 23168,
+        "description": "Voluptas doloremque accusamus aperiam et eum ut. Velit laudantium voluptatum veritatis impedit inventore quia sunt. Pariatur incidunt qui soluta id.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00cc33?text=rerum",
+        "created_at": "2001-12-16T04:30:25.000000Z",
+        "updated_at": "2004-07-22T20:01:28.000000Z"
+      }, {
+        "id": 477,
+        "product_category_id": 42,
+        "name": "Little Hamburger",
+        "price": 20861,
+        "description": "Sit sit eius quaerat cum. Ratione dolores quis consequatur odio quia. Sit est totam accusamus ut quis. Sed quidem ab atque dignissimos temporibus autem sint.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/0077bb?text=iure",
+        "created_at": "1986-12-17T01:51:40.000000Z",
+        "updated_at": "1983-07-31T05:47:32.000000Z"
+      }],
+      "Bacon Cheese Dog": [{
+        "id": 354,
+        "product_category_id": 62,
+        "name": "Cheese Dog",
+        "price": 15631,
+        "description": "Quod tenetur minima magni occaecati consequatur. Enim earum est ea totam. Itaque perferendis delectus ipsa rerum optio ipsam ipsa. Libero eum quaerat ducimus incidunt rerum est sunt nesciunt.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00aa11?text=cupiditate",
+        "created_at": "2020-08-01T04:24:50.000000Z",
+        "updated_at": "2007-08-29T06:35:06.000000Z"
+      }, {
+        "id": 465,
+        "product_category_id": 62,
+        "name": "Bacon Cheeseburger",
+        "price": 2708,
+        "description": "Odio repudiandae sequi modi. Magni vel est vero. Molestias ex accusantium velit architecto. Quam assumenda facilis asperiores suscipit quis aliquid.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00ccee?text=id",
+        "created_at": "2013-10-04T15:05:37.000000Z",
+        "updated_at": "1989-11-12T11:44:55.000000Z"
+      }],
+      "Little Bacon Cheeseburger": [{
+        "id": 65,
+        "product_category_id": 81,
+        "name": "Cheeseburger",
+        "price": 6565,
+        "description": "Ut error eveniet et in et. Labore voluptas sed voluptatem ut. Qui adipisci quaerat quia commodi et qui.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00cc99?text=consequatur",
+        "created_at": "2003-09-18T14:53:04.000000Z",
+        "updated_at": "2010-06-03T00:32:06.000000Z"
+      }, {
+        "id": 121,
+        "product_category_id": 81,
+        "name": "Bacon Cheeseburger",
+        "price": 10774,
+        "description": "Vitae velit modi sequi nam necessitatibus nihil. Necessitatibus qui sit sed ex nam officia. Aliquid voluptatem culpa voluptas enim enim molestiae eos.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00bbbb?text=voluptatem",
+        "created_at": "2006-04-12T20:15:08.000000Z",
+        "updated_at": "1985-02-15T00:21:00.000000Z"
+      }, {
+        "id": 210,
+        "product_category_id": 81,
+        "name": "Pasta",
+        "price": 19511,
+        "description": "Veniam deleniti sit voluptatum delectus. Quisquam voluptas nostrum deleniti fugit et tenetur. Minima enim aut autem nam eveniet in.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/0044dd?text=pariatur",
+        "created_at": "2020-03-05T07:21:41.000000Z",
+        "updated_at": "1972-12-05T03:29:40.000000Z"
+      }, {
+        "id": 286,
+        "product_category_id": 81,
+        "name": "Bacon Burger",
+        "price": 7149,
+        "description": "Velit vero error illum alias totam et. Molestiae atque labore corporis iusto doloribus. Iure eligendi aut sit ut quia. Ea aliquam iste iusto est quam dignissimos repellendus.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00ccbb?text=voluptatem",
+        "created_at": "2013-03-27T05:29:30.000000Z",
+        "updated_at": "1988-07-04T14:21:16.000000Z"
+      }, {
+        "id": 297,
+        "product_category_id": 81,
+        "name": "Bacon Cheese Dog",
+        "price": 8791,
+        "description": "Quasi vel quis voluptatem est dolores deserunt accusamus. Nihil cupiditate sunt perspiciatis incidunt quaerat.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00cc33?text=quas",
+        "created_at": "1978-07-29T10:17:31.000000Z",
+        "updated_at": "2003-02-13T07:18:33.000000Z"
+      }],
+      "Cheese Veggie Sandwich": [{
+        "id": 97,
+        "product_category_id": 86,
+        "name": "Little Bacon Burger",
+        "price": 16399,
+        "description": "Repellendus voluptates ut voluptas dolores. Atque et est sed dolor eius libero consequatur. Dicta ut doloremque sed omnis quod rerum.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00eeaa?text=eaque",
+        "created_at": "2002-04-21T22:58:31.000000Z",
+        "updated_at": "1985-02-12T03:54:03.000000Z"
+      }, {
+        "id": 254,
+        "product_category_id": 86,
+        "name": "Hamburger",
+        "price": 5561,
+        "description": "Quidem rem natus sed quod voluptas. Praesentium qui architecto aut adipisci et. Dolores quos temporibus sint ullam.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00bb99?text=quis",
+        "created_at": "2000-09-29T02:00:00.000000Z",
+        "updated_at": "1993-05-02T06:50:39.000000Z"
+      }, {
+        "id": 324,
+        "product_category_id": 86,
+        "name": "Veggie Sandwich",
+        "price": 15488,
+        "description": "Nam odio et reprehenderit labore. Est aut numquam ut in ut vero hic. Mollitia mollitia rerum doloremque quisquam asperiores quo cupiditate.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00aa77?text=et",
+        "created_at": "2017-02-14T02:54:35.000000Z",
+        "updated_at": "1978-04-13T18:39:28.000000Z"
+      }, {
+        "id": 336,
+        "product_category_id": 86,
+        "name": "Veggie Sandwich",
+        "price": 23413,
+        "description": "Ipsa voluptas incidunt quidem. Doloremque sit et ad nihil. Sunt excepturi autem doloribus provident quibusdam. Rerum nesciunt ut magnam perspiciatis in quae voluptatem.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff77?text=sed",
+        "created_at": "1985-03-06T16:53:21.000000Z",
+        "updated_at": "2004-08-28T21:04:20.000000Z"
+      }, {
+        "id": 387,
+        "product_category_id": 86,
+        "name": "Little Cheeseburger",
+        "price": 22231,
+        "description": "Commodi quo omnis illum qui eius autem et. Id nihil nulla tempore officiis et in perspiciatis. Quam est qui perferendis. Culpa tenetur quae pariatur explicabo officiis et similique.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/00ffdd?text=molestias",
+        "created_at": "1974-12-16T04:03:42.000000Z",
+        "updated_at": "2012-04-05T22:28:20.000000Z"
+      }, {
+        "id": 410,
+        "product_category_id": 86,
+        "name": "Cheeseburger",
+        "price": 1147,
+        "description": "Pariatur repudiandae culpa est molestiae libero. Perspiciatis commodi aut quasi vero eum possimus aut nisi. Unde nihil et reprehenderit itaque.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/0055cc?text=qui",
+        "created_at": "1980-11-16T12:50:19.000000Z",
+        "updated_at": "2011-04-01T12:11:58.000000Z"
+      }, {
+        "id": 472,
+        "product_category_id": 86,
+        "name": "Little Cheeseburger",
+        "price": 20835,
+        "description": "Alias aut fugit mollitia sed nulla ut qui. Suscipit assumenda modi velit optio. Quibusdam ut omnis quia. Et ad quidem rerum.",
+        "image": "https:\/\/via.placeholder.com\/640x480.png\/002200?text=quia",
+        "created_at": "2017-05-02T22:58:41.000000Z",
+        "updated_at": "1983-10-17T09:08:38.000000Z"
+      }]
+    }
+  }
+}
