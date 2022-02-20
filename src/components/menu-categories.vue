@@ -13,7 +13,7 @@
         <li 
           v-for="item in categories" 
           :key="item" 
-          @click="selectProduct(item)"
+          @click="() => selectProduct(item)"
           :class="{'selected-product': active === item}"
         >
           {{ item }}
@@ -27,7 +27,7 @@
           <li 
             v-for="item in categories" 
             :key="item" 
-            @click="selectProduct(item)"
+            @click="() => selectProduct(item)"
           >
             {{ item }}
           </li>

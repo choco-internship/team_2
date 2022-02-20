@@ -32,7 +32,7 @@ import VInput from '../components/v-input.vue'
   export default {
     data() {
       return {
-        email: '1',
+        email: '',
         password: '',
         step: 1,
         type: 'button'

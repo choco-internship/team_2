@@ -1,46 +1,46 @@
 <template>
-  <div>
-    <h4 class="product-title">{{ title }}</h4>
-
-    <div class="pizza" v-for="product in menu" :key="product.id">
-      <div class="pizza__info">
-        <span class="pizza__info-name">{{ product.name }}</span>
-        <span class="pizza__info-description">{{ product.description }}</span>
-        <span class="pizza__info-price">{{ product.price.toLocaleString() }} тг</span>
-      </div>
-      <div class="pizza__img">
-        <img :src="product.image" :alt="product.name" />
-        <VQuantity/>
-      </div>
+  <div class="product">
+    <div class="info">
+      <span class="name">{{ product.name }}</span>
+      <span class="description">{{ product.description }}</span>
+      <span class="price">{{ product.price.toLocaleString() }} тг</span>
+    </div>
+    <div class="image">
+      <img :src="product.image" :alt="product.name" />
+      <VQuantity className="quantity" :count="count || 0" :add="add" :remove="remove"/>
     </div>
   </div>
 </template>
 
 <script>
-  import VQuantity from '../../../choco/src/components/v-quantity'
+  import VQuantity from '../components/v-quantity'
   export default {
     components: { VQuantity },
-      props: {
-        title: {
-          type: String,
-          required: true
-        },
-        menu: {
-          type: Array,
-          required: true
-        }
-      
+    props:  {
+      product: {
+        type: Object,
+        required: true
       }
+    },
+    methods: {
+      add() {
+        this.$store.dispatch("restaurant/incrementProduct", this.product)
+      },
+      remove() {
+        this.$store.dispatch("restaurant/decrementProduct", this.product)
+      }
+    },
+    computed: {
+      count() {
+        return this.$store.getters["restaurant/getByCartId"](this.product.id)
+      }
+    },
   }
+
 </script>
 
 <style scoped>
-  .product-title {
-    font-size: 1rem;
-    color: var(--text-grey);
-    padding: 1rem;
-  }
-  .pizza {
+  .product {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,42 +48,38 @@
     gap:.75rem;
     border-bottom: 1px solid #ECECEC;
   }
-  .pizza__info {
+  .info {
     flex: 1;
   }
-  .pizza__info-name {
+  .name {
     font-size: .9rem;
     color: var(--text-primary);
     font-weight: 500;
     display: block;
     margin-bottom: .3rem;
   }
-  .pizza__info-description {
+  .description {
     font-size: .75rem;
     color: #707070;
     margin-bottom: .3rem;
     display: block;
   }
-  .pizza__info-price {
+  .price {
     color: var(--blue-color);
     font-size: .9rem;
     display: block;
   }
-  .pizza__img {
+  .image {
     position: relative;
     max-width: 8rem;
+    
   }
-  .pizza__img img{
-  width: 100%;
+  .image img{
+    width: 100%;
+    border-radius: 4px;
   }
-  .add-btn {
-  border:none;
-  background-color: white;
-  font-size: 1.4rem;
-  color: var(--blue-color);
-  padding:.3rem .7rem;
-  border-radius: 8px;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
-  font-weight: 500;
-}
+  .quantity {
+    right: .5rem;
+    bottom: .5rem;
+  }
 </style>

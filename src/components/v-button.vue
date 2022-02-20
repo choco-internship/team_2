@@ -1,8 +1,8 @@
 <template>
-   <button class="main-btn">
-      <span><slot name="count"/></span>
-      <span>Оплатить</span>
-      <span>{{ total }} ₸</span>
+   <button :className="className" class="main-btn">
+      <span><slot name="count"></slot></span>
+      <span><slot name="name"></slot></span>
+      <span>{{ total.toLocaleString() }} ₸</span>
     </button>
 </template>
 
@@ -12,7 +12,15 @@
       total: {
         type: Number,
         required: true
-      }
+      },
+      className: {
+        type: String,
+        required: false
+      },
+      count: {
+        type: Number,
+        required: false
+      },
     } 
   }
 </script>
@@ -30,7 +38,5 @@
     font-weight: 700;
     font-size: 0.875rem;
   }
-  .main-btn span:first-child {
-    opacity: 0;
-  }
+
 </style>

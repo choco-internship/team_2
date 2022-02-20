@@ -22,7 +22,11 @@
           <p class="total__price price">{{ getTotal }} ₸</p>
         </div>
         <VContainer>
-          <VButton :total="getTotal"/>
+          <VButton :total="getTotal" >
+            <template v-slot:name>
+              Оплатить
+            </template>
+          </VButton>
         </VContainer>
       </main>
     </div>

@@ -1,26 +1,30 @@
 <template>
-  <div class="quantity">
-    <button @click="decrement">-</button>
-    <span>{{ count }}</span>
-    <button @click="increment">+</button>
+  
+  <div :className="className" class="quantity" >
+    <button @click="remove" v-if="count > 0">-</button>
+    <span v-if="count > 0">{{ count }}</span>
+    <button @click="add">+</button>
   </div>
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-        count: 1
-      }
-    },
-    methods: {
-      increment() {
-        this.count++
+    props: {
+      className: {
+        type: String,
+        required: false,
       },
-      decrement() {
-        if ( this.count !== 1) {
-          this.count--
-        }
+      count: {
+        type: Number,
+        required: true
+      },
+      add: {
+        type: Function,
+        required: true
+      },
+      remove: {
+        type: Function,
+        required: true
       }
     }
   }
@@ -29,7 +33,6 @@
 <style scoped>
   .quantity {
     display: flex;
-    min-width: 6.125rem;
     background: #ffffff;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -47,6 +50,7 @@
     padding: 0.3rem 0;
     transition: 0.2s ease-in;
     border-radius: 8px;
+    min-width: 2rem;
   }
   .quantity button:hover {
     background-color: var(--blue-color);
@@ -59,5 +63,6 @@
     font-size: 1rem;
     color: var(--text-primary);
     padding: 0.5rem 0;
+    min-width: 2rem;
   }
 </style>
