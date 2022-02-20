@@ -4,11 +4,13 @@
       Заказ с собой
     </VHeader>
     <main class="content">
-      <VRestaurant v-for="restaurant in restaurants" 
+      <VRestaurant v-for="restaurant in restaurants"
         :key="restaurant"
         :name="restaurant.restaurant_data.name"
         :location="restaurant.restaurant_data.location"
-        :img="restaurant.image.image_url"/>
+        :img="restaurant.image.image_url"
+        :to="'/menu/'+restaurant.restaurant_data.id"
+        />
     </main> 
     
   </div>
@@ -32,7 +34,6 @@
       restaurants() {
         return this.$store.getters['restaurant/GET_RESTAURANTS']
       }
-
     }
     
   }
@@ -40,7 +41,6 @@
 
 <style scoped>
   .home-wrapper {
-    height: calc(100vh - var(--header-height));
     background-color: #f8f8f8;
     font-size: 30px;
   }

@@ -1,5 +1,4 @@
 <template>
- 
   <div class="details">
     <VHeader backTo="/orders">
       Детали заказа
@@ -43,21 +42,26 @@ export default {
 </script>
 
 <style scoped>
+.details {
+  
+}
 .title-secondary {
   font-size: .9rem;
   color: var(--text-grey);
+  
 }
 .details__title {
   background-color: white;
-  padding: 1.25rem 0 0.75rem;
+  padding: 1.25rem 1rem 0.75rem;
   border-bottom: 1px solid #ECECEC;
+  line-height: 1.5rem;
 }
 .details__title hr {
   margin: 1rem 1rem 0;
 }
 .details__status {
   background-color: white;
-  padding: 1rem 0;
+  padding: 1rem ;
 }
 
 .details__status--info {
@@ -70,7 +74,7 @@ export default {
   background-color: white;
   border-bottom: 1px solid #ECECEC;
   margin-top: .5rem;
-  padding: 1rem 0 .5rem;
+  padding: 1rem 1rem .5rem;
 }
 .position__info {
   font-size: .95rem;
@@ -84,7 +88,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  padding: 1rem 0;
+  padding: 1rem ;
   font-size: .9rem;
   font-weight: 700;
 }

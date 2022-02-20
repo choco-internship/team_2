@@ -16,7 +16,7 @@ const routes = [
     component: MyOrders
   },
   {
-    path: "/details",
+    path: "/orders/:id",
     component: Details
   },
   {
@@ -24,7 +24,7 @@ const routes = [
     component: VCart
   },
   {
-    path: "/menu",
+    path: "/menu/:id",
     component: Menu
   },
   {

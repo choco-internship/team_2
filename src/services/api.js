@@ -6,5 +6,6 @@ export const api = axios.create({
 
 export default {
   getRestaurants: () => api.get('/home').then(({data}) => data),
-  getRestaurantId: () => api.get('/menu').then(({data}) => data)
+  getRestaurantId: (id) => api.get(`/menu#${id}`).then(({data}) => data),
+  
 }
