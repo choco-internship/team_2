@@ -48,6 +48,9 @@
     gap:.75rem;
     border-bottom: 1px solid #ECECEC;
   }
+  .pizza__info {
+    flex: 1;
+  }
   .pizza__info-name {
     font-size: .9rem;
     color: var(--text-primary);

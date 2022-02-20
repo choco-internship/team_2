@@ -4,6 +4,7 @@ import VRegister from "../pages/v-register"
 import MyOrders from "../pages/MyOrders"
 import Details from "../pages/Details"
 import Menu from "../pages/Menu"
+import Rakhmet from "../pages/Rakhmet"
 import {createRouter, createWebHistory} from  "vue-router"
 
 const routes = [
@@ -18,6 +19,10 @@ const routes = [
   {
     path: "/orders/:id",
     component: Details
+  },
+  {
+    path: "/rakhmet",
+    component: Rakhmet
   },
   {
     path: "/cart",

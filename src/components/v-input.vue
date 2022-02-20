@@ -1,7 +1,7 @@
 <template>
   <label>
     {{label}}
-    <input :type='input' :placeholder='placeholder'/>
+    <input :type='type' :placeholder='placeholder' :v-model="vModal"/>
   </label>
 </template>
 
@@ -17,11 +17,15 @@
         type: String,
         required: true
       },
-      input: {
+      type: {
         type: String,
         required: true
       },
       placeholder: {
+        type: String,
+        required: true
+      },
+      vModal: {
         type: String,
         required: true
       }

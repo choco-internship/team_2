@@ -8,15 +8,11 @@
       :pagination="{
         type: 'fraction',
       }"
-      :navigation="true"
       :modules="modules"
       loop
       class="menu-swiper"
     >
-      <swiper-slide 
-        v-for="img in menu.restaurant.restaurant_images" 
-        :key="img.id"
-      >
+      <swiper-slide v-for="img in menu.restaurant.restaurant_images" :key="img.id" >
         <img :src="img.image_url" :alt="menu.restaurant.restaurant_info.name" />
       </swiper-slide>
     </swiper>
@@ -30,7 +26,7 @@
 
 <script>
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { Pagination, Navigation } from 'swiper';
+  import { Pagination } from 'swiper';
 
   import VHeader from '../components/v-header.vue';
   import MenuItem from '../components/menu-item.vue';
@@ -38,7 +34,6 @@
 
   import 'swiper/swiper-bundle.min.css';
   import 'swiper/components/pagination/pagination.min.css';
-  import 'swiper/components/navigation/navigation.min.css';
 
   export default {
     data() {
@@ -62,7 +57,7 @@
     },
     setup() {
       return {
-        modules: [Pagination, Navigation],
+        modules: [Pagination],
       };
     },
   }

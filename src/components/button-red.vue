@@ -1,5 +1,5 @@
 <template>
-  <button :type="type" :className="className">
+  <button :type="type" :className="className" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
@@ -20,6 +20,10 @@
       className: {
         type: String,
         required: false
+      },
+      disabled: {
+        type: String,
+        required: false
       }
     }
   }
@@ -38,5 +42,9 @@
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
     outline: none;
+  }
+  button:disabled {
+    background-color: #ECECEC;
+    color: #8f8f8f
   }
 </style>

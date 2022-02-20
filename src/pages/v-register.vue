@@ -5,7 +5,8 @@
       <div v-if="step === 1">
         <h3 class="email__title">Регистрация</h3>
         <span class="email__info">Введите ваш почтовый адрес</span>
-        <VInput type="text" placeholder="Введите почтовый адрес" label="e-mail"/>
+        <VInput type="text" placeholder="Введите почтовый адрес" label="e-mail" :vModal="email"/>
+        <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
         <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       </div>
   
@@ -13,12 +14,12 @@
         <div v-if="step === 2">
           <h3 class="email__title">Введите пароль</h3>
           <span class="email__info">Пароль должен состоять минимум из <br/> 9 символов</span>
-          <VInput type="password" placeholder="Введите пароль" label="Пароль"/>
+          <VInput type="password" placeholder="Введите пароль" label="Пароль" :vModal="password"/>
           <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link></span>
         </div>
       </transition>
     </div>
-    <ButtonRed :type="button" className="fixed" @click="handleClick">
+    <ButtonRed :type="button" className="fixed" @click="handleClick" :disabled="!email">
       Далее
     </ButtonRed>  
   </div>
@@ -31,6 +32,8 @@ import VInput from '../components/v-input.vue'
   export default {
     data() {
       return {
+        email: '1',
+        password: '',
         step: 1,
         type: 'button'
       }
