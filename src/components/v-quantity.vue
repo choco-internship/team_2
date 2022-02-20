@@ -1,5 +1,5 @@
 <template>
-  
+
   <div :className="className" class="quantity" >
     <button @click="remove" v-if="count > 0">-</button>
     <span v-if="count > 0">{{ count }}</span>
@@ -62,7 +62,7 @@
     text-align: center;
     font-size: 1rem;
     color: var(--text-primary);
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
     min-width: 2rem;
   }
 </style>
