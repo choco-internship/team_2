@@ -21,7 +21,7 @@
     <MenuCategories :categories="Object.keys(menu.products)" :active="selected" :onSelect="selectProduct"/>
     <ProductList v-if="selected" :title="selected" :menu="menu.products[selected]" />
     <ProductList v-else v-for="item in Object.keys(menu.products)" :title="item" :menu="menu.products[item]" :key="item"/>
-    <VButton v-if="count !== 0" :total="total" className="fixed">
+    <VButton v-if="count !== 0" :total="total" className="fixed" @click="$router.push('/cart')">
       <template v-slot:count>{{ count }}</template>
       <template v-slot:name>Корзина</template>
     </VButton>
@@ -49,7 +49,8 @@
     methods: {
       selectProduct(item) {
         this.selected = item;
-      }
+      },
+
     },
     created() {
       this.$store.dispatch("restaurant/FETCH_MENU_BY_ID", this.$route.params.id)

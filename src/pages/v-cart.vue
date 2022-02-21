@@ -5,8 +5,8 @@
       </VHeader>
       <main class="content">
         <div class="restaurant">
-          <h3 class="restaurant__name title">Mamma mia</h3>
-          <p class="restaurant__location">ул. Панфилова 109</p>
+          <h3 class="restaurant__name title">{{ restaurant?.name }}</h3>
+          <p class="restaurant__location">{{ restaurant?.location }}</p>
         </div>
         <div class="order">
           <h3 class="order__title title">Мой заказ</h3>
@@ -50,15 +50,31 @@
       VCartItem,
       VContainer,
       VButton,
-        VHeader, 
+      VHeader, 
     },
     computed: {
       getTotal() {
         return this.product.reduce((a, b) => a + b.price, 0).toLocaleString()
-      }
+      },
+      restaurant() {
+        return this.$store.getters["restaurant/GET_MENU"].restaurant?.restaurant_info
+      },
+      products() {
+        const products = Object.values(this.$store.getters["restaurant/GET_MENU"].products).flat()
+        const cart = JSON.parse(localStorage.getItem('choco-cart')) || {};
+        return Object.entries(cart).map(([key, value]) => ({...products.find(item => item.id == key), ...value}))
+      },
+    
     },
     methods: {
      
+    },
+    mounted() {
+      if (!this.restaurant) {
+        this.$router.push('/')
+      }
+      console.log(this.products);
+      
     }
   }
 </script>

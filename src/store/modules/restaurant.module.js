@@ -62,6 +62,6 @@ export const restaurant = {
     GET_MENU: (state) => state.menu,
     getByCartId: (state) => (id) => state.cart[id]?.count || 0,
     getCount: (state) => Object.values(state.cart).map(item => item.count).reduce((a,b) => a + b, 0),
-    getPrice: (state) => Object.values(state.cart).map(item => item.price * item.count).reduce((a,b) => a + b, 0)      
+    getPrice: (state) => Object.values(state.cart).map(item => item.price * item.count).reduce((a,b) => a + b, 0)     
   } 
 };
