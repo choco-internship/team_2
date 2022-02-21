@@ -1,12 +1,13 @@
 import api from '../../services/api'
 
+const initialCart = JSON.parse(localStorage.getItem('choco-cart')) || {};
+
 export const restaurant = {
   namespaced: true,
   state: {
     restaurants: [],
     menu: {},
-    cart: {},
-
+    cart: initialCart,
   },
   mutations: {
     SET_RESTAURANTS(state,  payload) {
@@ -21,7 +22,7 @@ export const restaurant = {
       } else {
         state.cart[id] = { count: 1, price}
       }
-
+      localStorage.setItem('choco-cart', JSON.stringify(state.cart));
     },
     SET_CART_DECREMENT(state, {id, price}) {
       if (state.cart[id]) {
@@ -29,6 +30,7 @@ export const restaurant = {
           state.cart[id] = { count: state.cart[id].count - 1, price}
         }
       }
+      localStorage.setItem('choco-cart', JSON.stringify(state.cart));
     },
   },
   actions: {

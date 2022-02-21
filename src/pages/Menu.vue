@@ -22,8 +22,8 @@
     <ProductList v-if="selected" :title="selected" :menu="menu.products[selected]" />
     <ProductList v-else v-for="item in Object.keys(menu.products)" :title="item" :menu="menu.products[item]" :key="item"/>
     <VButton v-if="count !== 0" :total="total" className="fixed">
-        <template v-slot:count>{{ count }}</template>
-        <template v-slot:name>Корзина</template>
+      <template v-slot:count>{{ count }}</template>
+      <template v-slot:name>Корзина</template>
     </VButton>
   </div>
 </template>

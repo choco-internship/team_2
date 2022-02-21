@@ -43,6 +43,7 @@
   .home-wrapper {
     background-color: #f8f8f8;
     font-size: 30px;
+    padding-bottom: 4rem;
   }
 
 </style>

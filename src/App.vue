@@ -18,7 +18,7 @@
     components: { VNavbar },
     methods: {
       changeRoute(route) {
-        if(['/menu', '/cart', '/register'].includes(route.path)){
+        if(/menu|register|cart/.test(route.path)) {
           this.isActive = false
         } else {
           this.isActive = true
@@ -38,7 +38,6 @@
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
   #app {
     font-family: "Roboto", sans-serif;
-    padding-bottom: var(--header-height);
   }
   :root {
     --blue-color: #2997ff;
@@ -58,6 +57,9 @@
   }
   li {
     list-style: none;
+  }
+  a {
+    text-decoration: none;
   }
   html,
   body {
