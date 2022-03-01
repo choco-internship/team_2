@@ -1,14 +1,13 @@
 <template>
   <div class="menu-item">
     <h4 class="title">{{ title }}</h4>
-    <MenuItem v-for="product in menu" :key="product.id" :product="product"/>
+    <MenuItem v-for="product in menu" :key="product.product_id" :product="product"/>
   </div>
 </template>
 
 <script>
-import MenuItem from './menu-item.vue';
+  import MenuItem from './menu-item.vue';
  
-  
   export default {
     components: { MenuItem },
     props: {

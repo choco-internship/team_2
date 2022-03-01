@@ -5,7 +5,7 @@
       <p class="order__product-price price">{{ price.toLocaleString() }} ₸</p>
     </div>
     <div class="order__product-content">
-      <img src="../assets/images/pizza.png" alt="pepperoni"/>
+      <img :src="image" :alt="name"/>
         <VQuantity/>
     </div>
   </div>
@@ -25,7 +25,12 @@
       name: {
         type: String,
         required: true
-      }
+      },
+      image: {
+        type: String,
+        required: true
+      },
+
     }
   }
 </script>

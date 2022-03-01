@@ -12,11 +12,11 @@
       <ul class="menu__list-items">
         <li 
           v-for="item in categories" 
-          :key="item" 
+          :key="item.product_category_id" 
           @click="() => selectProduct(item)"
-          :class="{'selected-product': active === item}"
+          :class="{'selected-product': active.product_category_id === item.product_category_id}"
         >
-          {{ item }}
+          {{ item.product_category_name }}
         </li>
       </ul>
     </div>
@@ -26,10 +26,10 @@
         <ul class="menu-active-list">
           <li 
             v-for="item in categories" 
-            :key="item" 
+            :key="item.product_category_id" 
             @click="() => selectProduct(item)"
           >
-            {{ item }}
+            {{ item.product_category_name }}
           </li>
         </ul>
       </div>

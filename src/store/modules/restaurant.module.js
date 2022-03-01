@@ -16,18 +16,18 @@ export const restaurant = {
     SET_MENU_BY_ID(state, payload) {
       state.menu = payload
     },
-    SET_CART_INCREMENT(state, {id, price}) {      
-      if (state.cart[id] ) {
-        state.cart[id] = { count: state.cart[id].count + 1, price}
+    SET_CART_INCREMENT(state, {product_id, price, product_name, image}) {      
+      if (state.cart[product_id] ) {
+        state.cart[product_id] = { count: state.cart[product_id].count + 1, price, product_name, image, product_id}
       } else {
-        state.cart[id] = { count: 1, price}
+        state.cart[product_id] = { count: 1, price, product_name, image, product_id}
       }
       localStorage.setItem('choco-cart', JSON.stringify(state.cart));
     },
-    SET_CART_DECREMENT(state, {id, price}) {
-      if (state.cart[id]) {
-        if (state.cart[id].count > 0) {
-          state.cart[id] = { count: state.cart[id].count - 1, price}
+    SET_CART_DECREMENT(state, {product_id, price, product_name, image}) {
+      if (state.cart[product_id]) {
+        if (state.cart[product_id].count > 0) {
+          state.cart[product_id] = { count: state.cart[product_id].count - 1, price, product_name, image, product_id}
         }
       }
       localStorage.setItem('choco-cart', JSON.stringify(state.cart));

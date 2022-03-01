@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <VHeader backTo="/">
-      {{ menu.restaurant.restaurant_info.name }}
+      {{ menu.restaurant_name }}
     </VHeader>
 
     <swiper
@@ -12,15 +12,29 @@
       loop
       class="menu-swiper"
     >
-      <swiper-slide v-for="img in menu.restaurant.restaurant_images" :key="img.id" >
-        <img :src="img.image_url" :alt="menu.restaurant.restaurant_info.name" />
+      <swiper-slide v-for="img in menu.restaurant_images" :key="img.image_id" >
+        <img :src="img.url" :alt="menu.restaurant_name" />
       </swiper-slide>
     </swiper>
 
-    <span class="location">{{ menu.restaurant.restaurant_info.location }}</span>
-    <MenuCategories :categories="Object.keys(menu.products)" :active="selected" :onSelect="selectProduct"/>
-    <ProductList v-if="selected" :title="selected" :menu="menu.products[selected]" />
-    <ProductList v-else v-for="item in Object.keys(menu.products)" :title="item" :menu="menu.products[item]" :key="item"/>
+    <span class="location">{{ menu.location }}</span>
+    <MenuCategories 
+      :categories="menu.product_categories" 
+      :active="selected" 
+      :onSelect="selectProduct"
+    />
+    <ProductList 
+      v-if="selected" 
+      :title="selected.product_category_name" 
+      :menu="menu.product_categories.find(item => item.product_category_id == selected.product_category_id)?.products"
+    />
+    <ProductList 
+      v-else 
+      v-for="item in menu.product_categories" 
+      :title="item.product_category_name" 
+      :menu="item.products" 
+      :key="item.product_category_id"
+    />
     <VButton v-if="count !== 0" :total="total" className="fixed" @click="$router.push('/cart')">
       <template v-slot:count>{{ count }}</template>
       <template v-slot:name>Корзина</template>

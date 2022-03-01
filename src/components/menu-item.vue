@@ -1,12 +1,12 @@
 <template>
   <div class="product">
     <div class="info">
-      <span class="name">{{ product.name }}</span>
+      <span class="name">{{ product.product_name }}</span>
       <span class="description">{{ product.description }}</span>
       <span class="price">{{ product.price.toLocaleString() }} тг</span>
     </div>
     <div class="image">
-      <img :src="product.image" :alt="product.name" />
+      <img :src="product.image" :alt="product.product_name" />
       <VQuantity className="quantity" :count="count || 0" :add="add" :remove="remove"/>
     </div>
   </div>
@@ -32,7 +32,7 @@
     },
     computed: {
       count() {
-        return this.$store.getters["restaurant/getByCartId"](this.product.id)
+        return this.$store.getters["restaurant/getByCartId"](this.product.product_id)
       }
     },
   }
