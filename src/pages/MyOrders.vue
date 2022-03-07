@@ -3,12 +3,13 @@
     <VHeader>
       Мои заказы
     </VHeader>
+    
     <VOrderItem v-for="order in orders" :key="order.id"
       :name="order.name"
       :price="order.price"
       :status="order.status"
       :time="order.time"
-      />
+    />
   </div>
 </template>
 
@@ -27,9 +28,10 @@
         step: 1
       }
     },
-    components: {
-    VOrderItem, VHeader },
-    
+    components: { VOrderItem, VHeader },
+    computed() {
+      
+    } 
   }
 </script>
 

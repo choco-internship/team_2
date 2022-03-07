@@ -33,18 +33,15 @@
 
 <script>
   import VNavbar from '../components/v-navbar'
-import VHeader from '../components/v-header'
-export default {
-  components: {
-    VNavbar, VHeader },
-    
+  import VHeader from '../components/v-header'
+  export default {
+    components: { VNavbar, VHeader },
+      
   }
 </script>
 
 <style scoped>
-.details {
-  
-}
+
 .title-secondary {
   font-size: .9rem;
   color: var(--text-grey);

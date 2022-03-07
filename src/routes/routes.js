@@ -3,6 +3,7 @@ import VHome from "../pages/v-home"
 import VRegister from "../pages/v-register"
 import MyOrders from "../pages/MyOrders"
 import Details from "../pages/Details"
+import Login from "../pages/Login"
 import Menu from "../pages/Menu"
 import Rakhmet from "../pages/Rakhmet"
 import {createRouter, createWebHistory} from  "vue-router"
@@ -35,6 +36,10 @@ const routes = [
   {
     path: "/register",
     component: VRegister
+  },
+  {
+    path: "/login",
+    component: Login
   },
   {
     path: "/:pathMatch(.*)*",

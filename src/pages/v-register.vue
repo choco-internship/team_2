@@ -15,27 +15,37 @@
           <h3 class="email__title">Введите пароль</h3>
           <span class="email__info">Пароль должен состоять минимум из <br/> 9 символов</span>
           <VInput type="password" placeholder="Введите пароль" label="Пароль" :vModal="password"/>
+          <input type="text" placeholder="Введите пароль" label="Пароль" v-model="password"/>
           <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link></span>
         </div>
       </transition>
+      <p v-if="error.length">
+        {{ error }}
+      </p>
     </div>
-    <ButtonRed :type="button" className="fixed" @click="handleClick" :disabled="!email">
+    <ButtonRed 
+      :type="step == 2 ? 'submit' : 'button' " 
+      className="fixed" 
+      @click="handleClick" 
+      :disabled="!email"
+    >
       Далее
     </ButtonRed>  
   </div>
 </template>
 
 <script>
-import ButtonRed  from '../components/button-red.vue'
-import VHeader from '../components/v-header.vue'
-import VInput from '../components/v-input.vue'
+  import ButtonRed  from '../components/button-red.vue'
+  import VHeader from '../components/v-header.vue'
+  import VInput from '../components/v-input.vue'
+  import api from '../services/api'
   export default {
     data() {
       return {
         email: '',
         password: '',
         step: 1,
-        type: 'button'
+        error: '',
       }
     },
     components: { VHeader, VInput, ButtonRed },
@@ -44,11 +54,19 @@ import VInput from '../components/v-input.vue'
         if (this.step === 1) {
           this.step++
         } else if (this.step === 2 ) {
-          this.button = 'submit'
+          api.register({email: this.email, password: this.password}).then(data => {
+            if (data.message === 'User created successfully') {
+              localStorage.setItem('authorized', true)
+              this.$router.push('/login')
+            } else {
+              this.error = data.message
+            }
+          }).catch(error => {
+            this.error = error.message
+          })
         }
       }
     }
-    
   }
 </script>
 

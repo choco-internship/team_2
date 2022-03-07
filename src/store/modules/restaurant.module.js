@@ -7,6 +7,7 @@ export const restaurant = {
   state: {
     restaurants: [],
     menu: {},
+    orders: [],
     cart: initialCart,
   },
   mutations: {
