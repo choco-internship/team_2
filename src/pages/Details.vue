@@ -1,4 +1,4 @@
-<template>
+<template >
   <div class="details">
     <VHeader backTo="/orders">
       Детали заказа
@@ -7,7 +7,6 @@
       <h3 class="details__title--name title">ChocoCafe</h3>
       <span class="details__location text">1.2 км • Коктем 3-й микрорайон </span>
     </div>
-
     <div class="details__status">
       <h4 class="details__status--title title-secondary">Статус заказа</h4>
       <span class="details__status--info">Завершен</span>
@@ -16,7 +15,6 @@
       <h4 class="details__status--title .title-secondary">Номер заказа</h4>
       <span class="details__status--info">№3161389</span>
     </div>
-     
     <div class="position">
       <h4 class="position__title title-secondary">Позиции в заказе</h4>
       <span class="position__info">1 х Паста спагетти Алио и Олио <span>3 900 тг</span></span>

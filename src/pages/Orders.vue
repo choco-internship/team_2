@@ -3,7 +3,6 @@
     <VHeader>
       Мои заказы
     </VHeader>
-    
     <VOrderItem v-for="order in orders" :key="order.id"
       :name="order.name"
       :price="order.price"
@@ -30,7 +29,6 @@
     },
     components: { VOrderItem, VHeader },
     computed() {
-      
     } 
   }
 </script>

@@ -6,7 +6,7 @@
     </div>
     <div class="order__product-content">
       <img :src="image" :alt="name"/>
-        <VQuantity/>
+      <VQuantity/>
     </div>
   </div>
 </template>

@@ -6,11 +6,6 @@
 
 <script>
   export default {
-    data() {
-      return {
-
-      }
-    },
     props: {
       type: {
         type: String,

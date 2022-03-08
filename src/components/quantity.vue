@@ -1,5 +1,4 @@
 <template>
-
   <div :className="className" class="quantity" >
     <button @click="remove" v-if="count > 0">-</button>
     <span v-if="count > 0">{{ count }}</span>

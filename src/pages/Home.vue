@@ -12,7 +12,6 @@
         :to="'/menu/'+restaurant.restaurant_data.id"
         />
     </main> 
-    
   </div>
 </template>
 

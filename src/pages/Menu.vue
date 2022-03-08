@@ -3,7 +3,6 @@
     <VHeader backTo="/">
       {{ menu.restaurant_name }}
     </VHeader>
-
     <swiper
       :pagination="{
         type: 'fraction',
@@ -16,7 +15,6 @@
         <img :src="img.url" :alt="menu.restaurant_name" />
       </swiper-slide>
     </swiper>
-
     <span class="location">{{ menu.location }}</span>
     <MenuCategories 
       :categories="menu.product_categories" 
@@ -64,7 +62,6 @@
       selectProduct(item) {
         this.selected = item;
       },
-
     },
     created() {
       this.$store.dispatch("restaurant/fetchRestaurantById", this.$route.params.id)

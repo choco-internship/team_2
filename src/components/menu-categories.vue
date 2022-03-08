@@ -8,7 +8,6 @@
           <path d="M3.75 18H20.25" stroke="#3C3C43" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-  
       <ul class="menu__list-items">
         <li 
           v-for="item in categories" 
