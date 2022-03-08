@@ -5,8 +5,8 @@
       <div v-if="step === 1">
         <h3 class="email__title">Регистрация</h3>
         <span class="email__info">Введите ваш почтовый адрес</span>
-        <VInput type="text" placeholder="Введите почтовый адрес" label="e-mail" :vModal="email"/>
-        <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
+        <Input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
+        <!-- <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/> -->
         <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       </div>
   
@@ -14,7 +14,7 @@
         <div v-if="step === 2">
           <h3 class="email__title">Введите пароль</h3>
           <span class="email__info">Пароль должен состоять минимум из <br/> 9 символов</span>
-          <VInput type="password" placeholder="Введите пароль" label="Пароль" :vModal="password"/>
+          <Input type="password" placeholder="Введите пароль" label="Пароль" v-model="password"/>
           <input type="text" placeholder="Введите пароль" label="Пароль" v-model="password"/>
           <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link></span>
         </div>
@@ -37,7 +37,7 @@
 <script>
   import ButtonRed  from '../components/button-red.vue'
   import VHeader from '../components/header.vue'
-  import VInput from '../components/my-input.vue'
+  import Input from '../components/my-input.vue'
   import api from '../services/api'
   export default {
     data() {
@@ -48,7 +48,7 @@
         error: '',
       }
     },
-    components: { VHeader, VInput, ButtonRed },
+    components: { VHeader, Input, ButtonRed },
     methods: {
       handleClick() {
         if (this.step === 1) {

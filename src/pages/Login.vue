@@ -1,11 +1,13 @@
 <template>
-  <div class="register">
+  <div class="login">
     <VHeader backTo="/" className="active"/>
     <div class="email" >
-      <h3 class="email__title">Логин</h3>
+      <h3 class="email__title">Авторизация</h3>
       <span class="email__info">Введите ваш почтовый адрес и пароль</span>
-      <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
-      <input type="password" placeholder="Введите пароль" label="Пароль" v-model="password"/>
+      <Input type="text" placeholder="Email" label="e-mail" v-model="email"/>
+      <Input type="text" placeholder="Пароль" label="Пароль" v-model="password"/>
+      <!-- <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/> -->
+      <!-- <input type="password" placeholder="Введите пароль" label="Пароль" v-model="password"/> -->
       <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       <p v-if="error.length">
         {{ error }}
@@ -20,7 +22,7 @@
 <script>
   import ButtonRed  from '../components/button-red.vue'
   import VHeader from '../components/header.vue'
-  // import VInput from '../components/v-input.vue'
+  import Input from '../components/my-input.vue'
   import api from '../services/api'
   export default {
     data() {
@@ -30,7 +32,7 @@
         error: '',
       }
     },
-    components: { VHeader, ButtonRed },
+    components: { VHeader, Input, ButtonRed },
     methods: {
       handleClick() {
         api.login({email: this.email, password: this.password}).then(data => {
@@ -45,7 +47,7 @@
 </script>
 
 <style scoped>
-.register {
+.login {
     background-color: white;
     width: 100%;
     height: 100vh;
@@ -94,13 +96,5 @@
   .fixed {
     margin-bottom: 5.5rem;
   }
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: 0.5s ease;
-  }
 
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
-  }
 </style>

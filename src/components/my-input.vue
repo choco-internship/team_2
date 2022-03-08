@@ -1,7 +1,7 @@
 <template>
   <label>
     {{label}}
-    <input :type='type' :placeholder='placeholder' :v-model="vModal"/>
+    <input :type='type' :placeholder='placeholder' :value="inputValue" @input="$emit('update:inputValue', $event.target.value)"/>
   </label>
 </template>
 
@@ -20,7 +20,7 @@
         type: String,
         required: true
       },
-      vModal: {
+      inputValue: {
         type: String,
         required: true
       }
@@ -45,10 +45,12 @@
     color: black;
     transition: border .2s ease-in;
     margin-top: .3rem;
+    margin-bottom: 1rem;
   }
   input::placeholder {
     color: #8F8F8F;
     font-size: 1rem;
+    font-family: "Roboto", sans-serif;
   }
   input:focus {
     border: 1px solid var(--blue-color)
