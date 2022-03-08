@@ -19,7 +19,7 @@
 
 <script>
   import ButtonRed  from '../components/button-red.vue'
-  import VHeader from '../components/v-header.vue'
+  import VHeader from '../components/header.vue'
   // import VInput from '../components/v-input.vue'
   import api from '../services/api'
   export default {

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import VQuantity from './v-quantity.vue'
+  import VQuantity from './quantity.vue'
   export default {
     components: {
       VQuantity

@@ -14,8 +14,8 @@
 </template>
 
 <script>
-  import VOrderItem from '../components/v-order-item'
-  import VHeader from '../components/v-header.vue'
+  import VOrderItem from '../components/order-item'
+  import VHeader from '../components/header.vue'
   export default {
     data() {
       return {

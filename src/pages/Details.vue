@@ -32,8 +32,8 @@
 </template>
 
 <script>
-  import VNavbar from '../components/v-navbar'
-  import VHeader from '../components/v-header'
+  import VNavbar from '../components/navbar'
+  import VHeader from '../components/header'
   export default {
     components: { VNavbar, VHeader },
       

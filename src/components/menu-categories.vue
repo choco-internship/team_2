@@ -38,7 +38,7 @@
 </template>
 
 <script>
-  import VHeader from '../components/v-header.vue';
+  import VHeader from './header.vue';
   export default {
     components: { VHeader },
     data() {

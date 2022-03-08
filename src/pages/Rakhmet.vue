@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import VHeader from '../components/v-header.vue'
+  import VHeader from '../components/header.vue'
   export default {
-  components: { VHeader },
+    components: { VHeader },
     
   }
 </script>

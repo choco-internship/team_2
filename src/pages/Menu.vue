@@ -46,8 +46,8 @@
   import ProductList from '../components/product-list'
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { Pagination } from 'swiper';
-  import VButton from '../components/v-button.vue'
-  import VHeader from '../components/v-header.vue';
+  import VButton from '../components/button-blue.vue'
+  import VHeader from '../components/header.vue';
   import MenuCategories from '../components/menu-categories.vue';
 
   import 'swiper/swiper-bundle.min.css';
@@ -67,11 +67,11 @@
 
     },
     created() {
-      this.$store.dispatch("restaurant/FETCH_MENU_BY_ID", this.$route.params.id)
+      this.$store.dispatch("restaurant/fetchRestaurantById", this.$route.params.id)
     },
     computed: {
       menu() {
-        return this.$store.getters["restaurant/GET_MENU"]
+        return this.$store.getters["restaurant/getMenu"]
       },
       count() {
         return this.$store.getters["restaurant/getCount"]

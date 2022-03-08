@@ -8,7 +8,7 @@
 </template>
  
 <script>
-  import VNavbar from './components/v-navbar.vue'
+  import VNavbar from './components/navbar.vue'
   export default {
     data() {
       return {

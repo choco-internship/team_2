@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import VQuantity from '../components/v-quantity'
+  import VQuantity from '../components/quantity'
   export default {
     components: { VQuantity },
     props:  {

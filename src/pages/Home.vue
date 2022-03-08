@@ -17,25 +17,19 @@
 </template>
 
 <script>
-  import VHeader from '../components/v-header.vue'
-  import VRestaurant from '../components/v-restaurant.vue'
+  import VHeader from '../components/header.vue'
+  import VRestaurant from '../components/restaurant.vue'
 
   export default {
-    data() {
-      return {
-        
-      }
-    },
     components: { VHeader, VRestaurant },
     created() {
-      this.$store.dispatch("restaurant/FETCH_RESTAURANTS");
+      this.$store.dispatch("restaurant/fetchRestaurants");
     },
     computed: {
       restaurants() {
-        return this.$store.getters['restaurant/GET_RESTAURANTS']
+        return this.$store.getters['restaurant/getRestaurants']
       }
     }
-    
   }
 </script>
 

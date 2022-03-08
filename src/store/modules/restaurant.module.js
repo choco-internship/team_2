@@ -35,7 +35,7 @@ export const restaurant = {
     },
   },
   actions: {
-    async FETCH_RESTAURANTS({ commit }) {
+    async fetchRestaurants({ commit }) {
       try {
         const data = await api.getRestaurants();
         commit("SET_RESTAURANTS", data);
@@ -43,7 +43,7 @@ export const restaurant = {
         console.error('fetch restaurants', error); 
       }
     },
-    async FETCH_MENU_BY_ID({commit}, id) {
+    async fetchRestaurantById({commit}, id) {
       try {
         const data = await api.getRestaurantId(id);
         commit("SET_MENU_BY_ID", data);
@@ -59,8 +59,8 @@ export const restaurant = {
     },
   },
   getters: {
-    GET_RESTAURANTS: (state) => state.restaurants.map(item => item.restaurant),
-    GET_MENU: (state) => state.menu,
+    getRestaurants: (state) => state.restaurants.map(item => item.restaurant),
+    getMenu: (state) => state.menu,
     getByCartId: (state) => (id) => state.cart[id]?.count || 0,
     getCount: (state) => Object.values(state.cart).map(item => item.count).reduce((a,b) => a + b, 0),
     getPrice: (state) => Object.values(state.cart).map(item => item.price * item.count).reduce((a,b) => a + b, 0)     

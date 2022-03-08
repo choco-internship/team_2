@@ -34,23 +34,18 @@
 </template>
 
 <script>
-  import VCartItem from '../components/v-cart-item.vue'
-  import VContainer from '../components/v-container'
-  import VButton from '../components/v-button'
-  import VHeader from '../components/v-header.vue'
+  import VCartItem from '../components/cart-item.vue'
+  import VContainer from '../components/container'
+  import VButton from '../components/button-blue.vue'
+  import VHeader from '../components/header.vue'
   export default {
-    components: {
-      VCartItem,
-      VContainer,
-      VButton,
-      VHeader, 
-    },
+    components: { VCartItem, VContainer, VButton, VHeader, },
     computed: {
       getTotal() {
         return this.products.reduce((a, b) => a + b.price, 0).toLocaleString()
       },
       restaurant() {
-        return this.$store.getters["restaurant/GET_MENU"]
+        return this.$store.getters["restaurant/getMenu"]
       },
       products() {
         const cart = JSON.parse(localStorage.getItem('choco-cart')) || {};
