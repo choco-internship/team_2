@@ -34,7 +34,11 @@
   import VHeader from '../components/header'
   export default {
     components: { VNavbar, VHeader },
-      
+    mounted() {
+      const product = this.$store.getters['restaurant/getOrder'](this.$route.params.id)
+      console.log(product);
+      return product
+    }
   }
 </script>
 

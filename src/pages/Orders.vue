@@ -17,6 +17,7 @@
         :color="statuses[order.order_status].color"
         :status="statuses[order.order_status].text"
         :time="order.created_at"
+        @click="$router.push(`/orders/${order.id}`)"
       />
     </div>
     <div v-else class="empty">

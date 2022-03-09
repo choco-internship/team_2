@@ -106,6 +106,7 @@ export const restaurant = {
     getCount: (state) => Object.values(state.cart).map(item => item.count).reduce((a,b) => a + b, 0),
     getPrice: (state) => Object.values(state.cart).map(item => item.price * item.count).reduce((a,b) => a + b, 0),
     getOrders: (state) => state.orders,
-    isLoading: (state) => state.loading   
+    isLoading: (state) => state.loading,
+    getOrder: (state) => (id) => state.orders.find(item => item.id == id)
   } 
 };

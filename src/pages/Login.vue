@@ -12,6 +12,7 @@
         ref="email"
         v-model:input="email"
       />
+      <span v-show="errorEmail" class="error">Некорректный email</span>
       <Input 
         @keyup.enter="handleClick" 
         type="password" 
@@ -20,8 +21,9 @@
         ref="password"
         v-model:input="password"
       />
+      <span v-show="errorPassword" class="error">Пароль должен содержать минимум 9 символов</span>
       <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
-      <p v-if="error.length" class="error">
+      <p v-if="error.length" class="error-message">
         {{ error }}
       </p>
       
@@ -49,6 +51,8 @@
         email: '',
         password: '',
         error: '',
+        errorEmail: false,
+        errorPassword: false,
       }
     },
     components: { VHeader, Input, ButtonRed },
@@ -68,6 +72,22 @@
       focusInput() {
         this.$refs.email.$el.focus();
       },
+    },
+    watch: {
+      email() {
+        // eslint-disable-next-line
+        const req = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (req.test(this.email)) {
+          this.errorEmail = false;
+          return false
+        } else {
+          this.errorEmail = true;
+          return true
+        }
+      },
+      password() {
+        this.errorPassword = this.password.length < 9
+      }
     },
     mounted() {
       this.focusInput();
@@ -152,6 +172,11 @@
   }
 
   .error {
+    font-size: .8rem;
+    color: #DE2D49;
+    margin-bottom: 1rem;
+  }
+  .error-message {
     text-align: center;
     margin-top: 1rem;
     color: #DE2D49;

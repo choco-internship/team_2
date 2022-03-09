@@ -17,7 +17,7 @@ export default {
   getRestaurantId: (id) => api.get(`/menu/${id}`).then(({data}) => data.data),
   register: (body) => api.post('/register', body).then(({data}) => data),
   login: (body) => api.post('/login', body).then(({data}) => data),
-  logout: () => api.post('/logout', {}, options).then(() => localStorage.removeItem('user')),
+  logout: () => api.post('/logout', {}, options).finally(() => localStorage.removeItem('user')),
   getOrders: () => api.get('/orders', options).then(({data}) => data),
   orderCreate: (body) => api.post('/orders', body, options)
 }

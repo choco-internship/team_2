@@ -13,6 +13,7 @@
           v-model:input="email"
           ref="email"
         />
+        <span v-show="errorMsg" class="error">Некорректный email</span>
         <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       </div>
   
@@ -28,11 +29,12 @@
             ref="password"
             v-model:input="password"
           />
+          <span v-show="errorMsg" class="error">Пароль должен содержать минимум 9 символов</span>
           <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link></span>
         </div>
       </transition>
-      <p v-if="error.length">
-        {{ error }}
+      <p v-if="error.length" class="error-message">
+        Произошла ошибка, пожалуйста повторите попытку
       </p>
     </div>
     <ButtonRed 
@@ -58,17 +60,23 @@
         password: '',
         step: 1,
         error: '',
+        errorMsg: false,
       }
     },
     components: { VHeader, Input, ButtonRed },
     methods: {
       handleClick() {
         if (this.step === 1) {
-          this.step++
-          setTimeout(() => {
-            this.$refs.password.$el.focus();
-          }, 0)
+          if (!this.errorMsg) {
+            this.step++
+            setTimeout(() => {
+              this.$refs.password.$el.focus();
+            }, 0)
+          }
         } else if (this.step === 2 ) {
+          if (this.errorMsg) {
+            return false
+          }
           api.register({email: this.email, password: this.password}).then(data => {
             if (data.message === 'User created successfully') {
               localStorage.setItem('authorized', true)
@@ -83,6 +91,22 @@
       },
       focusInput() {
         this.$refs.email.$el.focus();
+      },
+    },
+    watch: {
+      email() {
+        // eslint-disable-next-line
+        const req = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (req.test(this.email)) {
+          this.errorMsg = false;
+          return false
+        } else {
+          this.errorMsg = true;
+          return true
+        }
+      },
+      password() {
+        this.errorMsg = this.password.length < 9
       }
     },
     mounted() {
@@ -133,6 +157,16 @@
     text-decoration: none;
     color: var(--text-grey);
     border-bottom: 1px solid var(--text-grey);
+  }
+  .error {
+    color: red;
+    font-size: .8rem;
+  }
+  .error-message {
+    color: red;
+    font-size: .8rem;
+    text-align: center;
+    margin-bottom: 2rem;
   }
   .active {
     align-self: flex-start;
