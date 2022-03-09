@@ -6,7 +6,7 @@
         <h3 class="email__title">Регистрация</h3>
         <span class="email__info">Введите ваш почтовый адрес</span>
         <Input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
-        <!-- <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/> -->
+        <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
         <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       </div>
   

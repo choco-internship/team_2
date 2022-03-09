@@ -3,7 +3,7 @@
     <VHeader>
       Мои заказы
     </VHeader>
-    <VOrderItem v-for="order in orders" :key="order.id"
+    <VOrderItem v-for="order in orderList" :key="order.id"
       :name="order.name"
       :price="order.price"
       :status="order.status"
@@ -28,7 +28,13 @@
       }
     },
     components: { VOrderItem, VHeader },
-    computed() {
+     created() {
+      this.$store.dispatch("restaurant/fetchOrders");
+    },
+    computed: {
+      orderList() {
+        return this.$store.getters['restaurant/getOrders']
+      }
     } 
   }
 </script>

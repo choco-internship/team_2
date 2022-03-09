@@ -33,6 +33,9 @@ export const restaurant = {
       }
       localStorage.setItem('choco-cart', JSON.stringify(state.cart));
     },
+    SET_ORDERS(state, payload) {
+      state.orders = payload
+    }
   },
   actions: {
     async fetchRestaurants({ commit }) {
@@ -48,7 +51,17 @@ export const restaurant = {
         const data = await api.getRestaurantId(id);
         commit("SET_MENU_BY_ID", data);
       } catch (error) {
-        console.errar('id error', error);
+        console.error('id error', error);
+      }
+    },
+    async fetchOrders({commit}, ) {
+      try {
+        const data = await api.getOrders();
+        console.log(data);
+        
+        commit("SET_ORDERS", data?.data?.order)
+      } catch (error) {
+        console.error('error', error)
       }
     },
     incrementProduct({commit}, product) {
@@ -63,6 +76,7 @@ export const restaurant = {
     getMenu: (state) => state.menu,
     getByCartId: (state) => (id) => state.cart[id]?.count || 0,
     getCount: (state) => Object.values(state.cart).map(item => item.count).reduce((a,b) => a + b, 0),
-    getPrice: (state) => Object.values(state.cart).map(item => item.price * item.count).reduce((a,b) => a + b, 0)     
+    getPrice: (state) => Object.values(state.cart).map(item => item.price * item.count).reduce((a,b) => a + b, 0),
+    getOrders: (state) => state.orders   
   } 
 };

@@ -6,8 +6,8 @@
       <span class="email__info">Введите ваш почтовый адрес и пароль</span>
       <Input type="text" placeholder="Email" label="e-mail" v-model="email"/>
       <Input type="text" placeholder="Пароль" label="Пароль" v-model="password"/>
-      <!-- <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/> -->
-      <!-- <input type="password" placeholder="Введите пароль" label="Пароль" v-model="password"/> -->
+      <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
+      <input type="password" placeholder="Введите пароль" label="Пароль" v-model="password"/>
       <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       <p v-if="error.length">
         {{ error }}
