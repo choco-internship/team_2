@@ -9,6 +9,7 @@ export const restaurant = {
     menu: {},
     orders: [],
     cart: initialCart,
+    loading: false,
   },
   mutations: {
     SET_RESTAURANTS(state,  payload) {
@@ -39,42 +40,53 @@ export const restaurant = {
     CLEAR_CART(state) {
       state.cart = {}
       localStorage.removeItem('choco-cart')
+    },
+    SET_LOADING(state, payload) {
+      state.loading = payload
     }
   },
   actions: {
     async fetchRestaurants({ commit }) {
       try {
+        commit("SET_LOADING", true)
         const data = await api.getRestaurants();        
         commit("SET_RESTAURANTS", data);
       } catch (error) {
         console.error('fetch restaurants', error); 
+      } finally {
+        commit("SET_LOADING", false)
       }
     },
     async fetchRestaurantById({commit}, id) {
       try {
+        commit("SET_LOADING", true)
         const data = await api.getRestaurantId(id);
         commit("SET_MENU_BY_ID", data);
       } catch (error) {
         console.error('id error', error);
+      } finally {
+        commit("SET_LOADING", false)
       }
     },
     async fetchOrders({commit}, ) {
       try {
+        commit("SET_LOADING", true)
         const data = await api.getOrders();
-        console.log(data);
-        
         commit("SET_ORDERS", data?.data?.order)
       } catch (error) {
         console.error('error', error)
+      } finally {
+        commit("SET_LOADING", false)
       }
     },
-    async createOrders(_, body) {
+    async createOrders({commit}, body) {
       try {
-        const data = await api.orderCreate(body);
-        console.log(data);
-        
+        commit("SET_LOADING", true)
+        await api.orderCreate(body);
       } catch (error) {
         console.error('error', error);
+      } finally {
+        commit("SET_LOADING", false)
       }
     },
     incrementProduct({commit}, product) {
@@ -93,6 +105,7 @@ export const restaurant = {
     getByCartId: (state) => (id) => state.cart[id]?.count || 0,
     getCount: (state) => Object.values(state.cart).map(item => item.count).reduce((a,b) => a + b, 0),
     getPrice: (state) => Object.values(state.cart).map(item => item.price * item.count).reduce((a,b) => a + b, 0),
-    getOrders: (state) => state.orders   
+    getOrders: (state) => state.orders,
+    isLoading: (state) => state.loading   
   } 
 };

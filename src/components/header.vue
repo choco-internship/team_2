@@ -54,9 +54,11 @@
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 2.2rem;
+    gap: 1.2rem;
     padding: 1.25rem;
     font-size: 1.25rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .header h1 svg {
     width: 1rem;

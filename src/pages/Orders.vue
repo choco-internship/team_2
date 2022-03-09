@@ -64,7 +64,7 @@
 .myOrders {
   height: fit-content;
   overflow-y: scroll;
-  padding-bottom: 5rem;
+  padding-bottom: 3.5rem;
 }
 .myOrders::-webkit-scrollbar {
   display: none;

@@ -5,7 +5,14 @@
       <div v-if="step === 1">
         <h3 class="email__title">Регистрация</h3>
         <span class="email__info">Введите ваш почтовый адрес</span>
-        <Input @keyup.enter="handleClick" type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model:input="email"/>
+        <Input 
+          @keyup.enter="handleClick" 
+          type="text" 
+          placeholder="Введите почтовый адрес" 
+          label="e-mail" 
+          v-model:input="email"
+          ref="email"
+        />
         <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       </div>
   
@@ -13,7 +20,14 @@
         <div v-if="step === 2">
           <h3 class="email__title">Введите пароль</h3>
           <span class="email__info">Пароль должен состоять минимум из <br/> 9 символов</span>
-          <Input @keyup.enter="handleClick" type="password" placeholder="Введите пароль" label="Пароль" v-model:input="password"/>
+          <Input 
+            @keyup.enter="handleClick" 
+            type="password" 
+            placeholder="Введите пароль" 
+            label="Пароль" 
+            ref="password"
+            v-model:input="password"
+          />
           <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link></span>
         </div>
       </transition>
@@ -51,6 +65,9 @@
       handleClick() {
         if (this.step === 1) {
           this.step++
+          setTimeout(() => {
+            this.$refs.password.$el.focus();
+          }, 0)
         } else if (this.step === 2 ) {
           api.register({email: this.email, password: this.password}).then(data => {
             if (data.message === 'User created successfully') {
@@ -63,8 +80,14 @@
             this.error = error.message
           })
         }
+      },
+      focusInput() {
+        this.$refs.email.$el.focus();
       }
-    }
+    },
+    mounted() {
+      this.focusInput();
+    },
   }
 </script>
 

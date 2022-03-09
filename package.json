@@ -41,7 +41,6 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "vue/no-v-model-argument": "disable"
     }
   },
   "browserslist": [

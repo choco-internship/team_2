@@ -4,16 +4,37 @@
     <div class="email" >
       <h3 class="email__title">Авторизация</h3>
       <span class="email__info">Введите ваш почтовый адрес и пароль</span>
-      <Input @keyup.enter="handleClick" type="text" placeholder="Email" label="e-mail" v-model:input="email"/>
-      <Input @keyup.enter="handleClick" type="password" placeholder="Пароль" label="Пароль" v-model:input="password"/>
+      <Input 
+        @keyup.enter="this.$refs.password.$el.focus()" 
+        type="text" 
+        placeholder="Email" 
+        label="e-mail" 
+        ref="email"
+        v-model:input="email"
+      />
+      <Input 
+        @keyup.enter="handleClick" 
+        type="password" 
+        placeholder="Пароль" 
+        label="Пароль"
+        ref="password"
+        v-model:input="password"
+      />
       <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       <p v-if="error.length" class="error">
         {{ error }}
       </p>
+      
     </div>
-    <ButtonRed  type="submit" className="fixed" @click="handleClick" :disabled="!email || !password">
-      Войти
-    </ButtonRed>  
+    
+    <div class="buttons">
+      <a href="/register" class="register">
+      Регистрация
+      </a>
+      <ButtonRed  type="submit" className="custom" @click="handleClick" :disabled="!email || !password">
+        Войти
+      </ButtonRed>  
+    </div>
   </div>
 </template>
 
@@ -41,10 +62,16 @@
             }
           }).catch(() => {
             this.error = 'Введенный логин и пароль не совпадают'
-            }) 
+          }) 
         }
-      }
-    }
+      },
+      focusInput() {
+        this.$refs.email.$el.focus();
+      },
+    },
+    mounted() {
+      this.focusInput();
+    },
   }
 </script>
 
@@ -95,9 +122,35 @@
     box-shadow: none;
     margin-bottom: 1.75rem;
   }
-  .fixed {
-    margin-bottom: 5.5rem;
+
+  .buttons {
+    position: fixed;
+    bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem;
+    width:100%;
   }
+  .register {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: .7px;
+    color: #131313;
+    font-weight: 600;
+    border-radius: 4px;
+    color: black;
+    border:  1px  solid black;
+    padding: .65rem 1.5rem;    
+  }
+  .register:active {
+    background-color: black;
+    color:white;
+  }
+  .custom {
+    margin:0;
+  }
+
   .error {
     text-align: center;
     margin-top: 1rem;
