@@ -1,7 +1,7 @@
 <template>
   <label>
     {{label}}
-    <input :type='type' :placeholder='placeholder' :value="inputValue" @input="$emit('update:inputValue', $event.target.value)"/>
+    <input :type='type' :placeholder='placeholder' :value="input" @input="$emit('update:input', $event.target.value)" />
   </label>
 </template>
 
@@ -20,11 +20,12 @@
         type: String,
         required: true
       },
-      inputValue: {
+      input: {
         type: String,
         required: true
       }
-    }
+    },
+    emits: ['update:input']
   }
 </script>
 
@@ -46,6 +47,7 @@
     transition: border .2s ease-in;
     margin-top: .3rem;
     margin-bottom: 1rem;
+    font-family: 'Roboto';
   }
   input::placeholder {
     color: #8F8F8F;

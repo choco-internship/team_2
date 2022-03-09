@@ -49,6 +49,8 @@
   .order__product img {
     max-width: 6.125rem;
     border-radius: 8px;
+       aspect-ratio: 3/2;
+    object-fit: cover;
   }
   .order__product-name {
     font-size: 0.875rem;

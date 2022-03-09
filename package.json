@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.8",
     "swiper": "^6.8.4",
     "vue": "^3.0.0",
     "vue-burger-menu": "^2.0.5",
@@ -33,13 +34,15 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-recommended",
+      "plugin:vue/vue3-essential",
       "eslint:recommended"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "vue/no-v-model-argument": "disable"
+    }
   },
   "browserslist": [
     "> 1%",

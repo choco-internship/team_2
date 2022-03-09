@@ -1,9 +1,11 @@
 <template>
-   <button :className="className" class="main-btn">
+  <div class="fixed">
+    <button class='main-btn'>
       <span><slot name="count"></slot></span>
       <span><slot name="name"></slot></span>
       <span>{{ total.toLocaleString() }} ₸</span>
     </button>
+  </div>
 </template>
 
 <script>
@@ -13,10 +15,7 @@
         type: Number,
         required: true
       },
-      className: {
-        type: String,
-        required: false
-      },
+
       count: {
         type: Number,
         required: false
@@ -26,6 +25,12 @@
 </script>
 
 <style scoped>
+  .fixed {
+    position: fixed;
+    padding: 1rem;
+    width: 100%;
+    bottom: 0;
+  }
   .main-btn {
     display: flex;
     width: 100%;

@@ -14,5 +14,10 @@ export default {
     headers: {
       'Authorization': `Bearer ${userInfo.access_token}`
     }
-  }).then(({data}) => data)
+  }).then(({data}) => data),
+  orderCreate: (body) => api.post('/orders', body, {
+    headers: {
+      'Authorization': `Bearer ${userInfo.access_token}`
+    }
+  })
 }

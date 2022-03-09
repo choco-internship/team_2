@@ -8,7 +8,40 @@ import Menu from "../pages/Menu"
 import Rakhmet from "../pages/Rakhmet"
 import {createRouter, createWebHistory} from  "vue-router"
 
+const auth = JSON.parse(localStorage.getItem('user'))?.access_token
+
 const routes = [
+  {
+    path: "/",
+    component: Home
+  },
+  {
+    path: "/orders",
+    component: Orders
+  },
+  {
+    path: "/rakhmet",
+    component: Rakhmet
+  },
+  {
+    path: "/menu/:id",
+    component: Menu
+  },
+  {
+    path: "/register",
+    component: Register
+  },
+  {
+    path: "/login",
+    component: Login
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/"
+  }
+]
+
+const authRoutes = [
   {
     path: "/",
     component: Home
@@ -48,7 +81,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  routes,
+  routes: auth ? authRoutes : routes,
   history: createWebHistory(process.env.BASE_URL)
 })
 

@@ -35,12 +35,16 @@ export const restaurant = {
     },
     SET_ORDERS(state, payload) {
       state.orders = payload
+    },
+    CLEAR_CART(state) {
+      state.cart = {}
+      localStorage.removeItem('choco-cart')
     }
   },
   actions: {
     async fetchRestaurants({ commit }) {
       try {
-        const data = await api.getRestaurants();
+        const data = await api.getRestaurants();        
         commit("SET_RESTAURANTS", data);
       } catch (error) {
         console.error('fetch restaurants', error); 
@@ -64,12 +68,24 @@ export const restaurant = {
         console.error('error', error)
       }
     },
+    async createOrders(_, body) {
+      try {
+        const data = await api.orderCreate(body);
+        console.log(data);
+        
+      } catch (error) {
+        console.error('error', error);
+      }
+    },
     incrementProduct({commit}, product) {
       commit("SET_CART_INCREMENT", product)
     },
     decrementProduct({commit}, product) {
       commit("SET_CART_DECREMENT", product)
     },
+    clearCart({commit}) {
+      commit("CLEAR_CART")
+    }
   },
   getters: {
     getRestaurants: (state) => state.restaurants.map(item => item.restaurant),

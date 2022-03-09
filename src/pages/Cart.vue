@@ -1,8 +1,8 @@
 <template>
   <div class="v-cart">
-      <VHeader backTo='/'>
+      <Header backTo='/'>
         Корзина
-      </VHeader>
+      </Header>
       <main class="content">
         <div class="restaurant">
           <h3 class="restaurant__name title">{{ restaurant?.restaurant_name }}</h3>
@@ -10,7 +10,7 @@
         </div>
         <div class="order">
           <h3 class="order__title title">Мой заказ</h3>
-          <VCartItem 
+          <CartItem 
             v-for="item in products" 
             :key="item.product_id" 
             :name="item.product_name" 
@@ -22,24 +22,21 @@
           <h3 class="total__title title">Итого</h3>
           <p class="total__price price">{{ getTotal }} ₸</p>
         </div>
-        <VContainer>
-          <VButton :total="getTotal" >
-            <template v-slot:name>
-              Оплатить
-            </template>
-          </VButton>
-        </VContainer>
+        <Button :total="getTotal" @click="handleClick">
+          <template v-slot:name>
+            Оплатить  
+          </template>
+        </Button>
       </main>
     </div>
 </template>
 
 <script>
-  import VCartItem from '../components/cart-item.vue'
-  import VContainer from '../components/container'
-  import VButton from '../components/button-blue.vue'
-  import VHeader from '../components/header.vue'
+  import CartItem from '../components/cart-item.vue'
+  import Button from '../components/button-blue.vue'
+  import Header from '../components/header.vue'
   export default {
-    components: { VCartItem, VContainer, VButton, VHeader, },
+    components: { CartItem, Button, Header, },
     computed: {
       getTotal() {
         return this.products.reduce((a, b) => a + b.price, 0).toLocaleString()
@@ -52,10 +49,26 @@
         return Object.values(cart)
       },
     },
+    methods: {
+      handleClick() {
+        this.$store.dispatch('restaurant/createOrders', {
+          restaurant_id: this.restaurant.restaurant_id,
+          products: this.products.map(item => ({
+            id: item.product_id,
+            quantity: item.count
+          }))
+        })
+        this.$store.dispatch('restaurant/clearCart')        
+        this.$router.push('/orders')
+      }
+    },
     mounted() {
       if (!Object.keys(this.restaurant).length) {
         this.$router.push('/')
       }
+      console.log(this.products);
+      
+      
     }
   }
 </script>
@@ -87,6 +100,7 @@
   .header h1 svg {
     width: 1rem;
     height: 1rem;
+
   }
   .content {
     height: calc(100vh - var(--header-height));
@@ -111,88 +125,6 @@
   }
   .order__title {
     margin-bottom: 0.25rem;
-  }
-  .order__product {
-    border-bottom: 1px solid #ececec;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 0.85rem;
-    padding-top: 0.75rem;
-  }
-  .order__product-content {
-    position: relative;
-  }
-  .order__product img {
-    max-width: 6.125rem;
-    border-radius: 8px;
-  }
-  .order__product-name {
-    font-size: 0.875rem;
-    color: var(--text-black);
-    margin-bottom: 0.5rem;
-  }
-  .order__product-quantity {
-    font-size: 0.875rem;
-    color: #8f8f8f;
-    margin-bottom: 0.5rem;
-  }
-
-  .menu {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 1rem 0 1rem;
-    height: 52px;
-  }
-
-  .menu__product {
-    border-bottom: 1px solid #ececec;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 0.85rem;
-    padding-top: 0.75rem;
-  }
-  .menu__product-content {
-    position: relative;
-  }
-  .menu__product img {
-    max-width: 6.125rem;
-    border-radius: 8px;
-  }
-  .menu__product-name {
-    font-size: 0.875rem;
-    color: var(--text-black);
-    margin-bottom: 0.5rem;
-  }
-  .menu__product-quantity {
-    font-size: 0.875rem;
-    color: #8f8f8f;
-    margin-bottom: 0.5rem;
-  }
-
-  .food__type {
-    padding: 0px 5px 0 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .food__type-name {
-    font-size: 14px;
-    color: #8f8f8f;
-  }
-  .food__type-img {
-    font-size: 14px;
-    opacity: 30%;
-  }
-  .food__type-selected {
-    background: rgba(218, 218, 218, 0.35);
-    border-radius: 40px;
-    width: 91px;
-    height: 36px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
   }
   .total {
     background-color: white;

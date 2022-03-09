@@ -33,7 +33,7 @@
       :menu="item.products" 
       :key="item.product_category_id"
     />
-    <VButton v-if="count !== 0" :total="total" className="fixed" @click="$router.push('/cart')">
+    <VButton  v-if="count !== 0 && authorized" @click="$router.push('/cart')" :total="total">
       <template v-slot:count>{{ count }}</template>
       <template v-slot:name>Корзина</template>
     </VButton>
@@ -75,7 +75,10 @@
       },
       total() {
         return this.$store.getters["restaurant/getPrice"]
-      }
+      },
+      authorized() {
+        return JSON.parse(localStorage.getItem('user'))?.access_token
+      } 
     },
     setup() {
       return {
@@ -88,19 +91,24 @@
 <style scoped>
   .menu {
     background-color:white;
+    position: relative;
   }
   .menu-swiper img {
     width: 100%;
     margin-bottom: .5rem;
+    height: 15rem;
+    object-fit: cover;
   }
   .location {
     font-size: .9rem; 
     color: var(--text-grey);  
-    padding:1rem;
+    margin:1rem;
+    overflow-x: scroll;
+    white-space: nowrap;
+    display: block;
   }
-  .fixed {
-    position: fixed;
-    bottom: 1rem;
+  .location::-webkit-scrollbar {
+    display: none;
   }
  
 </style>

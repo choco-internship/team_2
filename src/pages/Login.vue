@@ -4,16 +4,14 @@
     <div class="email" >
       <h3 class="email__title">Авторизация</h3>
       <span class="email__info">Введите ваш почтовый адрес и пароль</span>
-      <Input type="text" placeholder="Email" label="e-mail" v-model="email"/>
-      <Input type="text" placeholder="Пароль" label="Пароль" v-model="password"/>
-      <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
-      <input type="password" placeholder="Введите пароль" label="Пароль" v-model="password"/>
+      <Input @keyup.enter="handleClick" type="text" placeholder="Email" label="e-mail" v-model:input="email"/>
+      <Input @keyup.enter="handleClick" type="password" placeholder="Пароль" label="Пароль" v-model:input="password"/>
       <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
-      <p v-if="error.length">
+      <p v-if="error.length" class="error">
         {{ error }}
       </p>
     </div>
-    <ButtonRed type="submit" className="fixed" @click="handleClick" :disabled="!email">
+    <ButtonRed  type="submit" className="fixed" @click="handleClick" :disabled="!email || !password">
       Войти
     </ButtonRed>  
   </div>
@@ -35,12 +33,16 @@
     components: { VHeader, Input, ButtonRed },
     methods: {
       handleClick() {
-        api.login({email: this.email, password: this.password}).then(data => {
-          if (data.message === 'User is logged in') {
-            localStorage.setItem('user', JSON.stringify(data.data))            
-            this.$router.push('/')
-          }
-        })
+        if(this.email.length && this.password.length) {
+          api.login({email: this.email, password: this.password}).then(data => {            
+            if (data?.message === 'User is logged in') {
+              localStorage.setItem('user', JSON.stringify(data.data))            
+              this.$router.push('/')
+            }
+          }).catch(() => {
+            this.error = 'Введенный логин и пароль не совпадают'
+            }) 
+        }
       }
     }
   }
@@ -95,6 +97,11 @@
   }
   .fixed {
     margin-bottom: 5.5rem;
+  }
+  .error {
+    text-align: center;
+    margin-top: 1rem;
+    color: #DE2D49;
   }
 
 </style>

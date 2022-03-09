@@ -1,5 +1,5 @@
 <template>
-  <div :className="className" class="quantity" >
+  <div v-if="authorized" :className="className" class="quantity" >
     <button @click="remove" v-if="count > 0">-</button>
     <span v-if="count > 0">{{ count }}</span>
     <button @click="add">+</button>
@@ -25,7 +25,12 @@
         type: Function,
         required: true
       }
-    }
+    },
+    computed: {
+      authorized() {
+        return JSON.parse(localStorage.getItem('user'))?.access_token
+      }
+    } 
   }
 </script>
 

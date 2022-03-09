@@ -76,6 +76,8 @@
   .image img{
     width: 100%;
     border-radius: 4px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
   }
   .quantity {
     right: .5rem;

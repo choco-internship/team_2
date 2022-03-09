@@ -5,8 +5,7 @@
       <div v-if="step === 1">
         <h3 class="email__title">Регистрация</h3>
         <span class="email__info">Введите ваш почтовый адрес</span>
-        <Input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
-        <input type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model="email"/>
+        <Input @keyup.enter="handleClick" type="text" placeholder="Введите почтовый адрес" label="e-mail" v-model:input="email"/>
         <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link> </span>
       </div>
   
@@ -14,8 +13,7 @@
         <div v-if="step === 2">
           <h3 class="email__title">Введите пароль</h3>
           <span class="email__info">Пароль должен состоять минимум из <br/> 9 символов</span>
-          <Input type="password" placeholder="Введите пароль" label="Пароль" v-model="password"/>
-          <input type="text" placeholder="Введите пароль" label="Пароль" v-model="password"/>
+          <Input @keyup.enter="handleClick" type="password" placeholder="Введите пароль" label="Пароль" v-model:input="password"/>
           <span class="email__description">Нажимая  “Далее”, вы принимаете <br/> <router-link to="#">условия публичной оферты</router-link></span>
         </div>
       </transition>
