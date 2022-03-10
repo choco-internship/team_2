@@ -10,7 +10,7 @@
         Войти
       </button>
     </div>
-    <div v-else-if="orderList.length > 0">
+    <div v-else-if="orderList.length > 0" class="items">
       <VOrderItem v-for="order in orderList" :key="order.id"
         :name="order.restaurant.name"
         :price="order.total"
@@ -93,6 +93,9 @@
 }
 .auth button {
   width: 17rem;
+}
+.items {
+  padding-bottom:2rem;
 }
 .empty {
   height: 85vh;

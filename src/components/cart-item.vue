@@ -6,7 +6,7 @@
     </div>
     <div class="order__product-content">
       <img :src="image" :alt="name"/>
-      <VQuantity/>
+      <VQuantity :count="count"/>
     </div>
   </div>
 </template>
@@ -30,7 +30,10 @@
         type: String,
         required: true
       },
-
+      count: {
+        type: Number,
+        required: true
+      }
     }
   }
 </script>

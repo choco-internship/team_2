@@ -56,7 +56,7 @@
     border-radius: 8px;
     min-width: 2rem;
   }
-  .quantity button:hover {
+  .quantity button:active {
     background-color: var(--blue-color);
     color: white;
     border-radius: 8px;

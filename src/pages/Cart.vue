@@ -16,6 +16,7 @@
             :name="item.product_name" 
             :price="item.price"
             :image="item.image"
+            :count="item.count"
           />
         </div>
         <div class="total">
@@ -50,8 +51,8 @@
       },
     },
     methods: {
-      handleClick() {
-        this.$store.dispatch('restaurant/createOrders', {
+      async handleClick() {
+        await this.$store.dispatch('restaurant/createOrders', {
           restaurant_id: this.restaurant.restaurant_id,
           products: this.products.map(item => ({
             id: item.product_id,
