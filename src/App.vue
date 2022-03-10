@@ -1,24 +1,28 @@
 <template>
   <div class="app">
     <transition name="fade">
-     <router-view></router-view>
+      <router-view></router-view>
     </transition>
+    <RakhmetSvg/>
+    <Loader/>
     <VNavbar :isActive="isActive"/>
   </div>
 </template>
  
 <script>
-  import VNavbar from './components/v-navbar.vue'
+  import VNavbar from './components/navbar.vue'
+  import Loader from './components/loader.vue';
+  import RakhmetSvg from './components/rakhmet-svg.vue';
   export default {
     data() {
       return {
         isActive: true
       }
     },
-    components: { VNavbar },
+    components: { VNavbar, Loader, RakhmetSvg },
     methods: {
       changeRoute(route) {
-        if(['/menu', '/cart', '/register'].includes(route.path)){
+        if(/menu|register|cart/.test(route.path)) {
           this.isActive = false
         } else {
           this.isActive = true
@@ -57,6 +61,9 @@
   }
   li {
     list-style: none;
+  }
+  a {
+    text-decoration: none;
   }
   html,
   body {

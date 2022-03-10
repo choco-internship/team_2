@@ -16,7 +16,7 @@
       Мои заказы
     </router-link>
     <router-link to="/rakhmet" >
-      <svg viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="rakhmet">
         <mask id="mask0_888_330" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5957 14.8611V0H0.904251L0.904251 14.8611H15.5957Z" fill="white"/>
         </mask>
@@ -93,6 +93,9 @@
   }
   .router-link-exact-active svg>path{
     stroke: var(--blue-color)
+  }
+  .router-link-exact-active #rakhmet>path {
+    stroke: transparent;
   }
   
 </style>
