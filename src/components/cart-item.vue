@@ -5,14 +5,14 @@
       <p class="order__product-price price">{{ price.toLocaleString() }} ₸</p>
     </div>
     <div class="order__product-content">
-      <img src="../assets/images/pizza.png" alt="pepperoni"/>
-        <VQuantity/>
+      <img :src="image" :alt="name"/>
+      <VQuantity :count="count"/>
     </div>
   </div>
 </template>
 
 <script>
-  import VQuantity from './v-quantity.vue'
+  import VQuantity from './quantity.vue'
   export default {
     components: {
       VQuantity
@@ -24,6 +24,14 @@
       },
       name: {
         type: String,
+        required: true
+      },
+      image: {
+        type: String,
+        required: true
+      },
+      count: {
+        type: Number,
         required: true
       }
     }
@@ -44,6 +52,8 @@
   .order__product img {
     max-width: 6.125rem;
     border-radius: 8px;
+       aspect-ratio: 3/2;
+    object-fit: cover;
   }
   .order__product-name {
     font-size: 0.875rem;

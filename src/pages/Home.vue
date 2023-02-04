@@ -4,45 +4,39 @@
       Заказ с собой
     </VHeader>
     <main class="content">
-      <VRestaurant v-for="restaurant in restaurants" 
+      <VRestaurant v-for="restaurant in restaurants"
         :key="restaurant"
         :name="restaurant.restaurant_data.name"
         :location="restaurant.restaurant_data.location"
-        :img="restaurant.image.image_url"/>
+        :img="restaurant.image.image_url"
+        :to="'/menu/'+restaurant.restaurant_data.id"
+        />
     </main> 
-    
   </div>
 </template>
 
 <script>
-  import VHeader from '../components/v-header.vue'
-  import VRestaurant from '../components/v-restaurant.vue'
+  import VHeader from '../components/header.vue'
+  import VRestaurant from '../components/restaurant.vue'
 
   export default {
-    data() {
-      return {
-        
-      }
-    },
     components: { VHeader, VRestaurant },
     created() {
-      this.$store.dispatch("restaurant/FETCH_RESTAURANTS");
+      this.$store.dispatch("restaurant/fetchRestaurants");
     },
     computed: {
       restaurants() {
-        return this.$store.getters['restaurant/GET_RESTAURANTS']
+        return this.$store.getters['restaurant/getRestaurants']
       }
-
     }
-    
   }
 </script>
 
 <style scoped>
   .home-wrapper {
-    height: calc(100vh - var(--header-height));
     background-color: #f8f8f8;
     font-size: 30px;
+    padding-bottom: 4rem;
   }
 
 </style>

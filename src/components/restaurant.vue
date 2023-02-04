@@ -1,11 +1,11 @@
 <template>
-  <div class="spot">
+  <router-link :to="to" class="spot">
     <img :src="img" alt="mamma"/>
     <div>
       <h3 class="title">{{ name }}</h3>
       <p class="location">{{ location }}</p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -22,6 +22,10 @@
       img: {
         type: String,
         required:true
+      },
+      to: {
+        type: String,
+        required: true
       }
     }
   }
@@ -34,6 +38,7 @@
   align-items: center;
   padding: 1.125rem 1rem;
   border-bottom: 1px solid #dadada;
+  text-decoration: none;
 }
 .spot img {
   max-width: 5.625rem;

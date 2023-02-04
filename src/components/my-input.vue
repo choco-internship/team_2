@@ -1,31 +1,31 @@
 <template>
   <label>
     {{label}}
-    <input :type='input' :placeholder='placeholder'/>
+    <input :type='type' :placeholder='placeholder' :value="input" @input="$emit('update:input', $event.target.value)" />
   </label>
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-        
-      }
-    },
     props: {
       label: {
         type: String,
         required: true
       },
-      input: {
+      type: {
         type: String,
         required: true
       },
       placeholder: {
         type: String,
         required: true
+      },
+      input: {
+        type: String,
+        required: true
       }
-    }
+    },
+    emits: ['update:input']
   }
 </script>
 
@@ -46,10 +46,13 @@
     color: black;
     transition: border .2s ease-in;
     margin-top: .3rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto';
   }
   input::placeholder {
     color: #8F8F8F;
     font-size: 1rem;
+    font-family: "Roboto", sans-serif;
   }
   input:focus {
     border: 1px solid var(--blue-color)

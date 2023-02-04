@@ -1,9 +1,9 @@
 <template>
   <header :class="['header', className]" >
     <h1>
-        <svg v-if="backTo" @click="goBack" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z" fill="#131113"/>
-        </svg>
+      <svg v-if="backTo" @click="goBack" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 7H3.83L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9H16V7Z" fill="#131113"/>
+      </svg>
       <slot/>
     </h1>
   </header>
@@ -13,11 +13,6 @@
   import router from '../routes/routes'
 
   export default {
-    data() {
-      return  {
-      
-      }
-    },
     props: {
       backTo: {
         type: String,
@@ -59,9 +54,11 @@
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 2.2rem;
+    gap: 1.2rem;
     padding: 1.25rem;
     font-size: 1.25rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .header h1 svg {
     width: 1rem;
